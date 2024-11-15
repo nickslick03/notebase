@@ -166,6 +166,30 @@
                         </div>
                     </main>
 
+                    @if($sessions)
+                        <table>
+                            <thead>
+                                <th>id</th>
+                                <th>user_id</th>
+                                <th>ip_address</th>
+                                <th>user_agent</th>
+                                <th>payload</th>
+                                <th>last_activity</th>
+                            </thead>
+                            <tbody>
+                                @foreach ($sessions as $s)
+                                    <tr>
+                                        <td>{{$s->id}}</td>
+                                        <td>{{$s->user_id}}</td>
+                                        <td>{{$s->ip_address}}</td>
+                                        <td>{{$s->user_agent}}</td>
+                                        <td>{{$s->payload}}</td>
+                                        <td>{{$s->last_activity}}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    @endif
                     <footer class="py-16 text-center text-sm text-black dark:text-white/70">
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </footer>
