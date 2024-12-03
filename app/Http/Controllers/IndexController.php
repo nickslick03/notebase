@@ -15,10 +15,10 @@ class IndexController extends Controller
 
     public function index() {
 
-        $sessions = DB::select('select * from sessions');
+        # $sessions = DB::select('select * from sessions');
 
-        return view('welcome', [
-            'sessions' => $sessions
+        return view('pages/index', [
+            'names' => ['nick', 'annika', 'andrea']
         ]);
     }
 }
