@@ -6,6 +6,6 @@
 
 @section('body-content')
     @include('partials.header')
-    <h1>Welcome to notebase</h1>
+    <h1>Sign up</h1>
     @include('partials.footer')
 @endsection
