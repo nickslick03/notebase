@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+    <base href = "https://user-content-dot-custom-elements.appspot.com/PolymerElements/iron-icon/v1.0.13/iron-icon/">
+    <script src = "../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel = "import" href = "../iron-icons/iron-icons.html">
+    <link rel = "import" href = "iron-icon.html">
+    <style>
+        /* General */
+        :root {
+            --text-color: #2e2e2e;
+            --light-text-color: #757575;
+            --main-color: #ffc31f;
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: white;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--light-text-color);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-color);
+        }
+        .auto-margin {
+            margin: auto;
+        }
+        /* Chapter */
+        .chapter-card {
+            border-radius: 50px;
+            background: var(--main-color);
+            width: 500px;
+            height: 75px;
+            margin: 24px auto;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+    </style>
+</head>
+<body  style="margin: 0;">
+    <!-- Header -->
+    <header style="background: var(--main-color); color: white; padding: 6px;">
+        <div>
+            <div style="display: flex; align-items: center; margin: 0 6px;">
+                <div style="font-size: 28px;">Notebase</div>
+                <div style="width: 100%;"></div>
+                <div>
+                    <div style="display: flex; align-items: center;">
+                        <div style="margin-right: 6px;">Logout</div>
+                        <iron-icon icon="icons:exit-to-app"></iron-icon>
+                    </div>
+                </div>
+            </div>
+            <div style="background: white; border-radius: 25px; display: flex; align-items: center; margin-top: 4px;">
+                <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px;">
+                    <iron-icon icon="icons:account-circle" style="margin-right: 6px;"></iron-icon>
+                    <div style="color: var(--light-text-color)">Account</div>
+                </div>
+                <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
+                    <iron-icon icon="icons:date-range" style="margin-right: 6px;"></iron-icon>
+                    <div style="color: var(--light-text-color)">Dashboard</div>
+                </div>
+                <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
+                    <iron-icon icon="icons:chrome-reader-mode" style="margin-right: 6px;"></iron-icon>
+                    <div style="color: var(--light-text-color)">Departments</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Course Chapters -->
+    <main style="padding: 12px;">
+        <h1 style="text-align: center; margin: 12px; color: var(--text-color);">ART 171 Drawing 1</h1>
+        <section class="chapter-card">
+            <h2 class="auto-margin">Shape and Line</h2>
+        </section>
+        <section class="chapter-card">
+            <h2 class="auto-margin">Space and Composition</h2>
+        </section>
+        <section class="chapter-card">
+            <h2 class="auto-margin">Value</h2>
+        </section>
+        <section class="chapter-card">
+            <h2 class="auto-margin">Movement</h2>
+        </section>
+        <section class="chapter-card">
+            <h2 class="auto-margin">Movement</h2>
+        </section>
+        <section class="chapter-card">
+            <h2 class="auto-margin">Movement</h2>
+        </section>
+        <section class="chapter-card">
+            <h2 class="auto-margin">Movement</h2>
+        </section>
+        <section class="chapter-card">
+            <h2 class="auto-margin">Movement</h2>
+        </section>
+    </main>
+</body>
