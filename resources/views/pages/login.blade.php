@@ -1,4 +1,4 @@
-@extends('layout.layout', ['title' => 'Welcome'])
+@extends('layout.layout', ['title' => 'login'])
 
 @section('head-content')
     <link rel="stylesheet" href="/css/index.css">
