@@ -1,50 +1,54 @@
 @extends('layout.layout', ['title' => 'Register'])
 
 @section('head-content')
-    <link rel="stylesheet" href="/css/index.css">
+    <style>
+        input, select {
+            max-width: 400px;
+        }
+    </style>
 @endsection
 
 @section('body-content')
-<body>
-    <div id="topBar">
-          <table>
-              <td id="mainText">Register for Notebase!</td>
-              <td id="space"></td>
-              <td><a class="nav" href="login">Login</a></td>
-          </table>
-      </div>
-    <br>
-    <br>
-    <form action="" method="post">
-        <!--Capturing the Username-->
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
-        <br>
-        <br>
-        <!--Capturing the Email-->
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email">
-        <br>
-        <br>
-        <!--Capturing the Role-->
-        <select name="role" id="role">
-            <option value="">--- Choose a role ---</option>
-            <option value="professor">Professor</option>
-            <option value="student">Student</option>
-        </select>
-        <br>
-        <br>
-        <!--Capturing the Password-->
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
-        <br>
-        <br>
-        <!--Capturing the Match Password-->
-        <label for="confirm_password">Confirm Password:</label>
-        <input type="password" id="confirm_password" name="confirm_password">
-        <br>
-        <br>
-        <input type="submit">
-    </form>
-    @include('partials.footer')
+    <div class="px-4">
+        <h1 class="mt-4 mb-4">Register</h1>
+        <form action="" method="post">
+
+            <!--Capturing the Username-->
+            <div class="mb-3">
+                <label class="form-label" for="username">Username:</label>
+                <input class="form-control" type="text" id="username" name="username">    
+            </div> 
+
+            <!--Capturing the Email-->
+            <div class="mb-3">
+                <label class="form-label" for="email">Email:</label>
+                <input class="form-control" type="text" id="email" name="email">    
+            </div>
+
+            <!--Capturing the Role-->
+            <div class="mb-3">
+                <label class="form-label" for="role">Role:</label>
+                <select class="form-select" name="role" id="role">
+                    <option>--- Choose a role ---</option>
+                    <option value="professor">Professor</option>
+                    <option value="student">Student</option>
+                </select>                
+            </div>
+
+            <!--Capturing the Password-->
+            <div class="mb-3">
+                <label class="form-label" for="password">Password:</label>
+                <input class="form-control" type="password" id="password" name="password">            
+            </div>
+
+
+            <!--Capturing the Match Password-->
+            <div class="mb-3">
+                <label class="form-label" for="confirm_password">Confirm Password:</label>
+                <input class="form-control" type="password" id="confirm_password" name="confirm_password">            
+            </div>
+
+            <input type="submit" class="mb-4 btn btn-primary">
+        </form>
+    </div>
 @endsection

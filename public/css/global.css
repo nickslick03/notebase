@@ -1,4 +1,25 @@
 /* General */
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#layout {
+    flex: 1;
+}
+
+footer {
+    background-color: var(--light-text-color);
+    color: white;
+    padding: 20px 0;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 :root {
     --text-color: #2e2e2e;
     --light-text-color: #757575;
@@ -6,35 +27,6 @@
     --background-color: white;
 }
 
-::-webkit-scrollbar {
-    width: 10px;
-    height: 5px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--background-color);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--light-text-color);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--text-color);
-}
-
 .auto-margin {
     margin: auto;
-}
-
-/* Chapter */
-.chapter-card {
-    border-radius: 50px;
-    background: var(--main-color);
-    width: 500px;
-    height: 75px;
-    margin: 24px auto;
-    display: flex;
-    align-items: center;
-    color: white;
 }
