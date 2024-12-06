@@ -9,6 +9,7 @@ use App\Http\Controllers\RegisterController;
 Route::get('/', [IndexController::class, 'index']);
 
 Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'create']);
 
 Route::get('/login', [LogInController::class, 'index']);
 
