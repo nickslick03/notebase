@@ -1,65 +1,58 @@
 body {
-    body{
-        font-family: "Times New Roman", Times, serif;
-    }
- 
- 
-    footer{
-        background-color: #928E85;
-        color: white;
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-        height: 10%;
-        white-space: nowrap;
-    }
- 
- 
-    #topBar {
-        width: 100%;
-        background-color: #ffc31f;
-        color: white;
-        background-color: #ffc31f;
-        }
- 
- 
-   
-    #mainText {
-        font-size: 2em;
-        padding-left: 10px;
-        padding-right: 7%;
-        width: 30%;
-        white-space: nowrap;
-       
-    }
-    .nav {
-        text-decoration: none;
-        color: white;
-        text-align: left;
-       
-    }
-    #quote {
-        text-align: center;
-        font-size: 30px;
-        bottom: 65%;
-      
-    }
-    button{
-        bottom: 35%;
-        position: fixed;
-        width: 30%;
-        height: 15%;
-        font-size: 45px;
-        cursor: pointer;
-        background-color: #ffc31f;
-        font-family: "Times New Roman", Times, serif;
-        display: inline-block;
-        border-radius: 3vw;
-    }
-    #button{
-        margin-left: 35%;
-        margin-right: 35%;
-    } 
+    font-family: "Times New Roman", Times, serif;
+}
+
+footer {
+    background-color: var(--light-text-color);
+    color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 10%;
+    white-space: nowrap;
+}
+
+#topBar {
+    width: 100%;
+    background-color: var(--main-color);
+    color: white;
+    background-color: var(--main-color);
+}
+
+#mainText {
+    font-size: 2em;
+    white-space: nowrap;
+}
+
+.nav {
+    text-decoration: none;
+    color: white;
+    text-align: left;
+}
+
+#quote {
+    text-align: center;
+    font-size: 30px;
+    bottom: 65%;
+
+}
+
+button {
+    bottom: 35%;
+    position: fixed;
+    width: 30%;
+    height: 15%;
+    font-size: 45px;
+    cursor: pointer;
+    background-color: var(--main-color);
+    font-family: "Times New Roman", Times, serif;
+    display: inline-block;
+    border-radius: 3vw;
+}
+
+#button {
+    margin-left: 35%;
+    margin-right: 35%;
 }

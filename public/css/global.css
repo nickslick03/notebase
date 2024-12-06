@@ -1,0 +1,40 @@
+/* General */
+:root {
+    --text-color: #2e2e2e;
+    --light-text-color: #757575;
+    --main-color: #ffc31f;
+    --background-color: white;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--light-text-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-color);
+}
+
+.auto-margin {
+    margin: auto;
+}
+
+/* Chapter */
+.chapter-card {
+    border-radius: 50px;
+    background: var(--main-color);
+    width: 500px;
+    height: 75px;
+    margin: 24px auto;
+    display: flex;
+    align-items: center;
+    color: white;
+}

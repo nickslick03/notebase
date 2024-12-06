@@ -1,34 +1,32 @@
-@extends('layout.layout', ['title' => 'login'])
+@extends('layout.layout', ['title' => 'Login'])
 
 @section('head-content')
     <link rel="stylesheet" href="/css/index.css">
 @endsection
 
 @section('body-content')
-    <body><div id = "topBar">
+    <div id="topBar">
         <table>
-            <td id = "mainText">Notebase</td>
-            <td id = "space"></td>
-            <td><a class = "nav" href ="signup">Register</a></td>
+            <td id="mainText">Notebase</td>
+            <td id="space"></td>
+            <td><a class="nav" href="/register">Register</a></td>
         </table>
     </div>
     <br>
-    <br></body>
-    <br>
-    <form action="" method = "POST">
-    <!--Capturing the Username-->
-    <label for="uname">Username:</label>
-    <input type="text" id="uname" name="uname">
     <br>
     <br>
-    <!--Capturing the Password-->
-    <label for="pwd">Password:</label>
-    <input type="password" id="pwd" name="pwd">
-    <br>
-    <br>
-    <input type="submit" value="Submit">
+    <form action="" method="post">
+        <!--Capturing the Username-->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <br>
+        <!--Capturing the Password-->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <br>
+        <input type="submit">
     </form>
-    </body>
-    </html>
     @include('partials.footer')
 @endsection
