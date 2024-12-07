@@ -12,7 +12,9 @@
     <div class="px-4">
         <h1 class="mt-4 mb-4">Register</h1>
         <form action="" method="post">
+            
             @csrf {{ csrf_field() }}
+
             <!--Capturing the Username-->
             <div class="mb-3">
                 <label class="form-label" for="username">Username:</label>
@@ -35,8 +37,11 @@
             <div class="mb-3">
                 <label class="form-label" for="role">Role:</label>
                 <select class="form-select" name="role" id="role" required>
-                    <option value="student" {{ old('role') == 'student' ? 'selected' : ''}}>Student</option>
-                    <option value="professor" {{ old('role') == 'professor' ? 'selected' : ''}}>Professor</option>
+                    @foreach ($roles as $role)
+                        <option value="{{ $role->role }}" {{ old('role') == $role->role ? 'selected' : ''}}>
+                            {{ $role->name }}
+                        </option>
+                    @endforeach
                 </select>                
             </div>
             @error('role')
@@ -52,6 +57,7 @@
             <ul>
                 <li>At least 8 characters</li>
                 <li>At least 1 uppercase letter</li>
+                <li>At least 1 lowercase letter</li>
                 <li>At least 1 number</li>
             </ul>
             @error('password')
