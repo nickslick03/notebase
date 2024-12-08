@@ -1,4 +1,4 @@
-@extends('layout.layout', ['title' => 'Welcome'])
+@extends('layout.layout', ['title' => 'Dashboard'])
 
 @section('head-content')
     <link rel="stylesheet" href="/css/dashboard.css">
@@ -7,8 +7,8 @@
 @section('body-content')
     <div style="height: 100%; width: 100%;">
         <main style="padding: 0 12px 12px 12px;">
+            <div class="ps-3">Hello, {{ session()->get('user')->username }}</div>
             <h1 class="section-title my-4">Dashboard</h1>
-            <div>Hello, {{ session()->get('user')->username }}</div>
             <section>
                 <h2 class="section-title">My Courses</h2>
                 <!-- Cards -->
