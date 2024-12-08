@@ -12,5 +12,6 @@ Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'create']);
 
 Route::get('/login', [LogInController::class, 'index']);
+Route::post('/login', [LogInController::class, 'authenticate']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
