@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class LogInController extends Controller
 {
@@ -13,6 +14,7 @@ class LogInController extends Controller
 
         $messages = [
             'new_account' => 'A new account has been created successfully.',
+            'logout' => 'Logged out successfully.',
             '' => ''
         ];
 
@@ -36,11 +38,18 @@ class LogInController extends Controller
                 $val->errors()->add(
                     'password', 'username or password is incorrect.'
                 );
+            } else {
+                session()->put('user', $user[0]);
             }
         });
 
         $validator->validate();
 
-        return response()->json('login successful');
+        return redirect('/dashboard');
+    }
+
+    public function logout() {
+        session()->forget('user');
+        return redirect('login?message=logout');
     }
 }

@@ -5,7 +5,13 @@
             <div style="width: 100%;"></div>
             <div>
                 <div style="display: flex; align-items: center;">
-                    <div style="margin-right: 6px;">Logout</div>
+                    <div style="margin-right: 6px;">
+                        @if(session()->has('user'))
+                            <a href="/logout">Logout</a>
+                        @else
+                            <a href="/login">Login</a>
+                        @endif
+                    </div>
                     <iron-icon icon="icons:exit-to-app"></iron-icon>
                 </div>
             </div>

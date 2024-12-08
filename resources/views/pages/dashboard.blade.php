@@ -8,6 +8,7 @@
     <div style="height: 100%; width: 100%;">
         <main style="padding: 0 12px 12px 12px;">
             <h1 class="section-title my-4">Dashboard</h1>
+            <div>Hello, {{ session()->get('user')->username }}</div>
             <section>
                 <h2 class="section-title">My Courses</h2>
                 <!-- Cards -->

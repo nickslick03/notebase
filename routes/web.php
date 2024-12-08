@@ -13,5 +13,6 @@ Route::post('/register', [RegisterController::class, 'create']);
 
 Route::get('/login', [LogInController::class, 'index']);
 Route::post('/login', [LogInController::class, 'authenticate']);
+Route::get('/logout', [LogInController::class, 'logout']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
