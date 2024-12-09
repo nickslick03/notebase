@@ -20,6 +20,8 @@ class RegisterController extends Controller
     public function create(Request $request) {
         
         $validator = Validator::make($request->all(), [
+            'first_name' => ['required', 'max:255'],
+            'last_name' => ['required', 'max:255'],            
             'username' => ['required', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
             'role' => ['required'],
@@ -43,7 +45,9 @@ class RegisterController extends Controller
                     'role', 'No such role exists. Try again.'
                 );
             }
-            $create_user = DB::select('call create_user(:username, :email, :role, :password)', [
+            $create_user = DB::select('call create_user(:first_name, :last_name, :username, :email, :role, :password)', [
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
                 'username' => $request->username,
                 'email' => $request->email,
                 'role' => $request->role,

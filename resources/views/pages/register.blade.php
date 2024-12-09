@@ -14,6 +14,24 @@
         
         @csrf {{ csrf_field() }}
 
+        <!--Capturing the first name-->
+        <div class="mb-3">
+            <label class="form-label" for="first_name">First Name:</label>
+            <input class="form-control" type="text" id="first_name" name="first_name" required value="{{ old('first_name') }}">    
+        </div> 
+        @error('first_name')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
+        <!--Capturing the last name-->
+        <div class="mb-3">
+            <label class="form-label" for="last_name">Last Name:</label>
+            <input class="form-control" type="text" id="last_name" name="last_name" required value="{{ old('last_name') }}">    
+        </div> 
+        @error('last_name')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
         <!--Capturing the Username-->
         <div class="mb-3">
             <label class="form-label" for="username">Username:</label>
