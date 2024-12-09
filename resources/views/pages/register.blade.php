@@ -26,7 +26,7 @@
         <!--Capturing the last name-->
         <div class="mb-3">
             <label class="form-label" for="last_name">Last Name:</label>
-            <input class="form-control" type="text" id="last_name" name="last_name" required value="{{ old('last_name') }}">    
+            <input class="form-control" type="text" id="last_name" name="last_name" required maxlength="255" value="{{ old('last_name') }}">    
         </div> 
         @error('last_name')
             <div class="alert alert-danger">{{ $message }}</div>
@@ -35,7 +35,7 @@
         <!--Capturing the Username-->
         <div class="mb-3">
             <label class="form-label" for="username">Username:</label>
-            <input class="form-control" type="text" id="username" name="username" required value="{{ old('username') }}">    
+            <input class="form-control" type="text" id="username" name="username" required maxlength="255" value="{{ old('username') }}">    
         </div> 
         @error('username')
             <div class="alert alert-danger">{{ $message }}</div>
@@ -44,7 +44,7 @@
         <!--Capturing the Email-->
         <div class="mb-3">
             <label class="form-label" for="email">Email:</label>
-            <input class="form-control" type="email" id="email" name="email" required value="{{ old('email') }}">    
+            <input class="form-control" type="email" id="email" name="email" required maxlength="255" value="{{ old('email') }}">    
         </div>
         @error('email')
             <div class="alert alert-danger">{{ $message }}</div>
