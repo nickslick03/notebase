@@ -1,7 +1,9 @@
 <header style="background: var(--main-color); color: white; padding: 6px;">
     <div>
         <div style="display: flex; align-items: center; margin: 0 6px;">
-            <div style="font-size: 28px;">Notebase</div>
+            <div id="logo" style="font-size: 28px;">
+                <a href="{{ session()->has('user') ? '/dashboard' : '/' }}">Notebase</a>
+            </div>
             <div style="width: 100%;"></div>
             <div>
                 <div style="display: flex; gap: 6px; align-items: center; margin-right: 6px;">

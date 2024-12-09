@@ -7,7 +7,6 @@
 @section('body-content')
     <div style="height: 100%; width: 100%;">
         <main style="padding: 0 12px 12px 12px;">
-            <div class="ps-3">Hello, {{ session()->get('user')->username }}</div>
             <h1 class="section-title my-4">Dashboard</h1>
             <section>
                 <h2 class="section-title">My Courses</h2>

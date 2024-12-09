@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function index() {
         if (!session()->has('user')) {
-            abort(401);
+            return redirect('login');
         }
         return view('pages.dashboard');
     }
