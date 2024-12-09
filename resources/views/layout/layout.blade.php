@@ -14,7 +14,7 @@
 </head>
 <body>
     @include('partials.header')
-    <div id="layout">
+    <div id="layout" class="px-4">
         @yield('body-content')
     </div>
     @include('partials.footer')
