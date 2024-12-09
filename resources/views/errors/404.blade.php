@@ -5,5 +5,5 @@
 
 @section('body-content')
     <h1>404 Not Found</h1>
-    <p>The page {{ request()->url() }} does not exist.</p>
+    <p>{{ $exception->getMessage() }}</p>
 @endsection
