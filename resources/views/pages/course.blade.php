@@ -1,131 +1,25 @@
-<!DOCTYPE html>
-<head>
-    <base href = "https://user-content-dot-custom-elements.appspot.com/PolymerElements/iron-icon/v1.0.13/iron-icon/">
-    <script src = "../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel = "import" href = "../iron-icons/iron-icons.html">
-    <link rel = "import" href = "iron-icon.html">
-    <style>
-        /* General */
-        :root {
-            --text-color: #2e2e2e;
-            --light-text-color: #757575;
-            --main-color: #ffc31f;
-            --diluted-main-color: #ffda75;
-        }
-        /* File Section */
-        .note-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            flex-direction: column;
-            background: white;
-            border-radius: 50px;
-            padding: 12px;
-        }
-        .note-preview {
-            height: 248px;
-            min-width: 225px;
-            width: 225px;
-            margin: 12px 24px 24px 24px;
-            border-radius: 25px;
-            box-shadow: 0 0px 5px 4px #f0f0f0;
-        }
-        .note-information {
-            height: 35px;
-            padding: 6px;
-            color: var(--text-color);
-            text-align: center;
-            background: white;
-            display: flex;
-            flex-direction: row;
-            border-top-left-radius: 25px;
-            border-top-right-radius: 25px;
-            border-bottom: 3px solid #f2f2f2;
-        }
-        .note-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom-left-radius: 25px;
-            border-bottom-right-radius: 25px;
-        }
-        .official {
-            border-bottom: 3px solid var(--main-color);
-        }
-        /* Unit Section */
-        .unit {
-            margin: 24px;
-            background-color: #f2f2f2;
-            border-radius: 50px;
-            border: 2px solid #f2f2f2;
-            border-bottom: 5px solid #f2f2f2;
-        }
-        .unit-title {
-            min-width: 200px;
-            display: flex;
-            align-items: center;
-            padding: 0;
-            justify-content: center;
-            border-radius: 50px;
-            background: var(--main-color);
-            width: fit-content;
-            margin: 20px auto;
-            color: white;
-            padding: 0 12px;
-        }
-    </style>
-</head>
-<body  style="margin: 0;">
-    <!-- Header -->
-    <header style="background: var(--main-color); color: white; padding: 6px;">
-        <div>
-            <div style="display: flex; align-items: center; margin: 0 6px;">
-                <div style="font-size: 28px;">Notebase</div>
-                <div style="width: 100%;"></div>
-                <div>
-                    <div style="display: flex; align-items: center;">
-                        <div style="margin-right: 6px;">Logout</div>
-                        <iron-icon icon="icons:exit-to-app"></iron-icon>
-                    </div>
-                </div>
-            </div>
-            <div style="background: white; border-radius: 25px; display: flex; align-items: center; margin-top: 4px;">
-                <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px;">
-                    <iron-icon icon="icons:account-circle" style="margin-right: 6px;"></iron-icon>
-                    <div style="color: var(--light-text-color)">Account</div>
-                </div>
-                <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
-                    <iron-icon icon="icons:date-range" style="margin-right: 6px;"></iron-icon>
-                    <div style="color: var(--light-text-color)">Dashboard</div>
-                </div>
-                <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
-                    <iron-icon icon="icons:chrome-reader-mode" style="margin-right: 6px;"></iron-icon>
-                    <div style="color: var(--light-text-color)">Departments</div>
-                </div>
-            </div>
-        </div>
-    </header>
+@extends('layout.layout', ['title' => 'Course'])
 
+@section('head-content')
+    <link rel="stylesheet" href="/css/course.css">
+@endsection
+
+@section('body-content')
+    <!-- Course Chapters -->
     <main style="padding: 12px;">
         <h1 style="text-align: center; margin: 12px; color: var(--text-color); display: flex; flex-direction: column;">
             <span style="color: var(--light-text-color); font-weight: 500;">STAT 269 Introductory Statistics</span>
-            <span style="color: var(--main-color); padding: 6px;">Ch 3</span>
         </h1>
 
         <!-- 
         
         Instructions on Page Interaction:
 
-            The unit section should be repeated for the number of tagged units
-            There should be an Untagged section at the end (same format as the unit sections)
-            Untagged is for things like T and Z table that don't belong to a specific unit
-            The unit sections would be created with the chapters as tag options
-            There would be separate tags (not user generated) for official resources, that are automatically tagged if uploaded by the professor
+            The chapter section should be repeated for the number of chapters
             The official notes are differentiated with the yellow line under the title (this may be changed to be more visually helpful)
             This differentiation is because offical resources might be moved to starred if you star it, but we still want to know it's official
 
-            For the orange circular part with the unit name, this should all just be visible as a bunch of buttons similar to the prior course screen, but when they're clicked on
-            they should expand to show what you see right now
+            Only the orange circular part of the chapter title should be visible. When it's clicked on, then we should expand what we see now
 
             When clicking on the resources, a dialog box should pop up with a zoomed in version of the notes, with a download button on top of the image
             I (Annika) can add this functionality in with Javascript as well as the title clicking/expanding, but am posting this as-is right now to allow us to move on/get
@@ -133,10 +27,10 @@
          
         -->
 
-        <!-- First Unit -->
-        <section class="unit">
+        <!-- First Chapter -->
+        <section class="chapter">
             <!-- Show those uploaded by professor first, mark official -->
-            <div class="unit-title"><h2>Unit 1</h2></div>
+            <div class="chapter-title"><h2>Chapter 1</h2></div>
 
             <div class="note-section">
 
@@ -233,4 +127,4 @@
             </div>
         </section>
     </main>
-</body>
+@endsection
