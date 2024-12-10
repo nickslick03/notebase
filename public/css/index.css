@@ -20,7 +20,7 @@ button {
     font-size: 45px;
     cursor: pointer;
     background-color: var(--main-color);
-    font-family: "Times New Roman", Times, serif;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
     display: inline-block;
     border-radius: 15px;
     padding: 10px;
