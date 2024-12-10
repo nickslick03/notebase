@@ -1,4 +1,7 @@
-<aside style="width: 200px; background: #f2f2f2; height: 600px; padding: 12px; box-shadow: 2px 0 5px #d1d1d1; color: var(--text-color); min-width: fit-content;">
+<aside style="width: 200px; height: 100vh; background: #f2f2f2; height: 600px; 
+padding: 12px; color: var(--text-color); 
+min-width: fit-content; position: fixed; left: 0; overflow-x: scroll;
+transform: translateX(-100%); transition: transform .5s;">
     <h3 style="margin: 6px 0;">Account</h3>
     <div style="display: flex; align-items: center; color: var(--light-text-color); font-size: 14px;">
         <iron-icon icon="icons:create" style="margin-right: 6px; max-height: 20px; max-width: 20px;"></iron-icon>
@@ -35,7 +38,7 @@
                 </div>
                 <input class="form-input" type="password">
             </div>
-            <input style="background: white; border: 1px solid darkgray; color: var(--text-color);" type="submit" value="Update">
+            <input style="background: white; border: 1px solid darkgray; color: var(--text-color); margin-bottom: 20px;" type="submit" value="Update">
         </div>
     </form>
 </aside>
