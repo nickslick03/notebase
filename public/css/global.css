@@ -1,4 +1,12 @@
 /* General */
+:root {
+    --text-color: #2e2e2e;
+    --light-text-color: #757575;
+    --main-color: #ffc31f;
+}
+.light-text {
+    color: var(--light-text-color);
+}
 body {
     min-height: 100vh;
     margin: 0;
