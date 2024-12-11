@@ -16,7 +16,6 @@ $('#search-form').on('submit', function (e) {
                 course_code,
                 ...title.split(' ')
             ];
-            console.log(searchables)
             let isMatch = false;
             for (let searchable of searchables) {
                 if (searchable.match(search_regexp) !== null) {
