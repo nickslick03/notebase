@@ -1,0 +1,13 @@
+.plus-icon {
+    background: var(--main-color);
+    border-radius: 30px;
+    color:white;
+    margin-left: 8px;
+    max-height: 15px;
+    max-width: 15px;
+}
+.class-container {
+    display: flex;
+    align-items: center;
+    padding: 4px 12px;
+}
