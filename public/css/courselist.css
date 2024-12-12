@@ -1,7 +1,5 @@
 .plus-icon {
-    background: var(--main-color);
     border-radius: 30px;
-    color:white;
     max-height: 20px;
     max-width: 20px;
 }
