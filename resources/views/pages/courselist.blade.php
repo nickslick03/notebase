@@ -26,7 +26,7 @@
                         <tr>
                             <th>Course</th>
                             <th>Title</th>
-                            <th class="text-center">Add</th>
+                            <th class="text-center">Add / Remove</th>
                         </tr>
                     </thead>
                     <tbody id="courses">
@@ -46,10 +46,13 @@
                                         {{ $course->title }}
                                     </td>
                                     <td class="text-center">
-                                        <form action="course/add" method="post">
-                                            <input type="hidden" name="course" value="{{ $course->course}}">
-                                            <button type="submit">
+                                        <form action="course/toggle" method="post">
+                                            @csrf {{ csrf_field() }}
+                                            <input type="hidden" name="course" value="{{ $course->course }}">
+                                            <input type="hidden" name="add" value="{{ !$course->is_enrolled }}">
+                                            <button type="submit" data-is_enrolled="{{ $course->is_enrolled }}">
                                                 <iron-icon icon="add" class="plus-icon"></iron-icon>
+                                                <iron-icon icon="clear" class="plus-icon"></iron-icon>
                                             </button>
                                         </form>
                                     </td>

@@ -32,3 +32,40 @@ $('#search-form').on('submit', function (e) {
         });
     }
 });
+
+[...$('form[action="course/toggle"] button[type="submit"]')].forEach(button => {
+    if (button.getAttribute('data-is_enrolled') === '1') {
+        button.querySelector('[icon="add"]').classList.add('d-none');
+    } else {
+        button.querySelector('[icon="clear"]').classList.add('d-none');
+    }
+});
+
+$('form[action="course/toggle"]').on('submit', async function (e) {
+    e.preventDefault();
+
+    $(this).find('button').attr('disabled');
+
+    const _token = $(this).find('[name="_token"]')[0].value;
+    const course = $(this).find('[name="course"]')[0].value;
+    const add_input = $(this).find('[name="add"]')[0];
+
+
+    const res = await fetch(this.getAttribute('action'), {
+        method: 'post',
+        body: new URLSearchParams({
+            _token,
+            course,
+            add: add_input.value
+        })
+    });
+
+    $(this).find('button').removeAttr('disabled');
+
+    add_input.value = add_input.value === '1' ? '0' : '1';
+
+    if (res.status <= 299) {
+        $(this).find('[icon="add"]')[0].classList.toggle('d-none');
+        $(this).find('[icon="clear"]')[0].classList.toggle('d-none');
+    }
+});

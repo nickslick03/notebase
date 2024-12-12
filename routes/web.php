@@ -6,6 +6,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LogInController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\UploadResource;
 
 Route::get('/', [IndexController::class, 'index']);
 
@@ -19,3 +20,7 @@ Route::get('/logout', [LogInController::class, 'logout']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
 Route::get('/course', [CourseController::class, 'index']);
+Route::post('/course/toggle', [CourseController::class, 'toggle']);
+
+
+Route::get('/upload_resource', [UploadResource::class, 'index']);

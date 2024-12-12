@@ -21,7 +21,7 @@
             <div class="navigation" style="background: white; border-radius: 25px; display: flex; align-items: center; margin-top: 4px;">
                 <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px;">
                     <iron-icon icon="icons:account-circle" style="margin-right: 6px;"></iron-icon>
-                    <div style="color: var(--light-text-color)" role="button">Account</div>
+                    <div id="accountbtn" style="color: var(--light-text-color)" role="button">Account</div>
                 </div>
                 <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
                     <iron-icon icon="icons:date-range" style="margin-right: 6px;"></iron-icon>
@@ -34,7 +34,7 @@
                 <!--test-->
                 <div style="display: flex; float: right align-items: center; color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
                     <iron-icon icon="icons:add" style="margin-right: 6px;"></iron-icon>
-                    <a href="/upload" style="color: var(--light-text-color)">Add Resource</a>
+                    <a href="/upload_resource" style="color: var(--light-text-color)">Add Resource</a>
                 </div>
             </div>
         @endif

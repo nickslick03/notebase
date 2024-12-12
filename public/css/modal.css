@@ -1,5 +1,5 @@
 /* Set a style for all buttons */
-button {
+.cancelbtn {
     background-color: #0D6EFD;
     color: white;
     padding: 14px 20px;
@@ -9,7 +9,7 @@ button {
     width: 100%;
 }
 
-button:hover {
+.cancelbtn:hover {
     opacity: 0.8;
 }
 
