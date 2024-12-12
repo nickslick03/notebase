@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
 
 class LogInController extends Controller
 {
@@ -45,11 +44,11 @@ class LogInController extends Controller
 
         $validator->validate();
 
-        $callback_url = isset($request->callback_url)
-            ? base64_decode($request->callback_url)
+        $callback_path = isset($request->callback_path)
+            ? base64_decode($request->callback_path)
             : '/dashboard';
 
-        return redirect($callback_url);
+        return redirect($request->getSchemeAndHttpHost() . $callback_path);
     }
 
     public function logout() {

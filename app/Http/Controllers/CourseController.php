@@ -10,7 +10,7 @@ class CourseController extends Controller
 {
     public function index(Request $request) {
         if (!session()->has('user')) {
-            return redirect('login?callback_url=' . base64_encode($request->url()));
+            return redirect('login?callback_path=' . base64_encode($request->getPathInfo()));
         }
 
         $courses = DB::select('select * from course_view');
