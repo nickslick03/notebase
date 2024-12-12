@@ -38,7 +38,7 @@
                                     data-title="{{ $course->title }}"
                                 >
                                     <td class="course-td">
-                                        <a href="/course/{{ $course->course }}" style="font-weight: 500; color: var(--text-color);">
+                                        <a class = "courseLinks" href="/course/{{ $course->course }}" style="font-weight: 500; color: var(--text-color);">
                                             {{ $course->subject_code }} {{ $course->course_code }}
                                         </a>
                                     </td>
@@ -47,7 +47,7 @@
                                     </td>
                                     <td class="text-center">
                                         <form action="course/toggle" method="post">
-                                            @csrf {{ csrf_field() }}
+                                            @csrf
                                             <input type="hidden" name="course" value="{{ $course->course }}">
                                             <input type="hidden" name="add" value="{{ !$course->is_enrolled }}">
                                             <button type="submit" data-is_enrolled="{{ $course->is_enrolled }}">

@@ -48,4 +48,31 @@ class CourseController extends Controller
             'status' => 'success'
         ]);
     }
+
+    public function course(Request $request) {
+        if (!session()->has('user')) {
+            return redirect('login?callback_path=' . base64_encode($request->getPathInfo()));
+        }
+
+        $courses = DB::select('
+            select * from course_view where course = ?
+        ', [$request->route('course')]);
+
+        if (count($courses) === 0) {
+            return abort(404, 'No course with an id of ' . $request->route('course') . ' exists.');
+        }
+
+        $resources = DB::select('
+        select r.*, (sru.user) is not null as is_starred, (sru.user = ?) as is_author
+        from resource r
+        left join starred_resource_user sru
+            on r.resource = sru.resource
+        where course = ?;', 
+        [session()->get('user')->user, $request->route('course')]);
+
+        return view('pages.course', [
+            'course' => $courses[0],
+            'resources' => $resources
+        ]);
+    }
 }

@@ -12,7 +12,7 @@
     <h1 style="text-align: center;">Login</h1>
     <form action="" method="post" style="border: 2px solid #d4d4d4; width: 400px; padding: 12px; margin: auto auto 24px auto; border-radius: 20px;">
 
-        @csrf {{ csrf_field() }}
+        @csrf
 
         <!--Capturing the Username-->
         <div class="mb-3">

@@ -11,39 +11,41 @@
                         <a href="/logout">Logout</a>
                         <iron-icon icon="icons:exit-to-app"></iron-icon>
                     @else
-                        
+                       
                         <a href="/login" style="display: flex; flex-direction: row; align-items: center;">Login
                             <iron-icon icon="icons:account-box" style="margin: 0 12px 0 6px; max-height: 20px; max-width: 20px;"></iron-icon>
                         </a>
-                        
+                       
                         <a href="/register" style="display: flex; flex-direction: row; align-items: center;">Register
-                            <iron-icon icon="icons:add-box" fill = "blue" style="margin: 0 6px; max-height: 20px; max-width: 20px;"></iron-icon>
-                        </a> 
-                        
+                            <iron-icon icon="icons:add-box" style="margin: 0 6px; max-height: 20px; max-width: 20px;"></iron-icon>
+                        </a>
+                       
                     @endif
                 </div>
             </div>
         </div>
         @if(session()->has('user'))
             <div class="navigation" style="background: white; border-radius: 25px; display: flex; align-items: center; margin-top: 4px;">
-                <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px;">
+                <!--Account-->
+                <div style="display: flex; flex-box: row; align-items: center; color: var(--main-color); padding: 2px 6px;">
                     <iron-icon icon="icons:account-circle" style="margin-right: 6px;"></iron-icon>
                     <div id="accountbtn" style="color: var(--light-text-color)" role="button">Account</div>
                 </div>
-                <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
-                    <iron-icon icon="icons:date-range" style="margin-right: 6px;"></iron-icon>
-                    <a href="/dashboard" style="color: var(--light-text-color)">Dashboard</a>
+                <!--Dashboard-->
+                <div style="color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
+                    <a href="/dashboard" style = "display: flex; flex-direction: row; align-items: center;"><iron-icon icon="icons:date-range" style="margin-right: 6px; color: var(--main-color);"></iron-icon>
+                   <div style="color: var(--light-text-color)">Dashboard</div></a>
                 </div>
                 <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
-                    <iron-icon icon="icons:chrome-reader-mode" style="margin-right: 6px;"></iron-icon>
-                    <a href="/course" style="color: var(--light-text-color)">Courses</a>
+                    <a href="/course" style = "display: flex; flex-direction: row; align-items: center;"><iron-icon icon="icons:chrome-reader-mode" style="margin-right: 6px; color: var(--main-color);"></iron-icon>
+                    <div style="color: var(--light-text-color)">Courses</div></a>
                 </div>
                 <!--test-->
-                <div style="display: flex; float: right align-items: center; color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
-                    <iron-icon icon="icons:add" style="margin-right: 6px;"></iron-icon>
-                    <a href="/upload_resource" style="color: var(--light-text-color)">Add Resource</a>
+                <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; ">
+                    <a href="/upload_resource" style = "display: flex; flex-direction: row; align-items: center;"><iron-icon icon="icons:add" style="margin-right: 6px; color: var(--main-color);"></iron-icon>
+                    <div style="color: var(--light-text-color);">Add Resource</div></a>
                 </div>
             </div>
         @endif
     </div>
-</header>
+ </header>

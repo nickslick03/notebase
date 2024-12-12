@@ -72,3 +72,11 @@
     color: white;
     padding: 0 12px;
 }
+a {
+    text-decoration: none;
+}
+
+.toggle-star button {
+    border: none;
+    background: none;
+}
