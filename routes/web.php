@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LogInController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\CourseController;
 
 Route::get('/', [IndexController::class, 'index']);
 
@@ -16,3 +17,5 @@ Route::post('/login', [LogInController::class, 'authenticate']);
 Route::get('/logout', [LogInController::class, 'logout']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
+
+Route::get('/course', [CourseController::class, 'index']);

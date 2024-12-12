@@ -45,7 +45,11 @@ class LogInController extends Controller
 
         $validator->validate();
 
-        return redirect('/dashboard');
+        $callback_url = isset($request->callback_url)
+            ? base64_decode($request->callback_url)
+            : '/dashboard';
+
+        return redirect($callback_url);
     }
 
     public function logout() {

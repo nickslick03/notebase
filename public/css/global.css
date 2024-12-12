@@ -28,12 +28,16 @@ h1 {
     margin: 1rem 0 !important;
 }
 
-a {
+#logo a, .account-links a {
     color: white !important;
 }
 
 .link {
     color: var(--main-color);
+}
+
+.navigation a {
+    text-decoration: none;
 }
 
 #layout {

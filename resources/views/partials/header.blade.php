@@ -5,7 +5,7 @@
                 <a href="{{ session()->has('user') ? '/dashboard' : '/' }}">Notebase</a>
             </div>
             <div style="width: 100%;"></div>
-            <div>
+            <div class="account-links">
                 <div style="display: flex; gap: 6px; align-items: center; margin-right: 6px;">
                     @if(session()->has('user'))
                         <a href="/logout">Logout</a>
@@ -18,18 +18,23 @@
             </div>
         </div>
         @if(session()->has('user'))
-            <div style="background: white; border-radius: 25px; display: flex; align-items: center; margin-top: 4px;">
+            <div class="navigation" style="background: white; border-radius: 25px; display: flex; align-items: center; margin-top: 4px;">
                 <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px;">
                     <iron-icon icon="icons:account-circle" style="margin-right: 6px;"></iron-icon>
-                    <div style="color: var(--light-text-color)">Account</div>
+                    <div style="color: var(--light-text-color)" role="button">Account</div>
                 </div>
                 <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
                     <iron-icon icon="icons:date-range" style="margin-right: 6px;"></iron-icon>
-                    <div style="color: var(--light-text-color)">Dashboard</div>
+                    <a href="/dashboard" style="color: var(--light-text-color)">Dashboard</a>
                 </div>
                 <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
                     <iron-icon icon="icons:chrome-reader-mode" style="margin-right: 6px;"></iron-icon>
-                    <div style="color: var(--light-text-color)">Courses</div>
+                    <a href="/course" style="color: var(--light-text-color)">Courses</a>
+                </div>
+                <!--test-->
+                <div style="display: flex; float: right align-items: center; color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
+                    <iron-icon icon="icons:add" style="margin-right: 6px;"></iron-icon>
+                    <a href="/upload" style="color: var(--light-text-color)">Add Resource</a>
                 </div>
             </div>
         @endif
