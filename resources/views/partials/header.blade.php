@@ -12,13 +12,15 @@
                         <iron-icon icon="icons:exit-to-app"></iron-icon>
                     @else
                         
-                        <a href="/login">Login</a>
-                        <iron-icon icon="icons:account-box" style="margin-right: 6px;"></iron-icon>
+                        <a href="/login" style="display: flex; flex-direction: row; align-items: center;">Login
+                            <iron-icon icon="icons:account-box" style="margin: 0 12px 0 6px; max-height: 20px; max-width: 20px;"></iron-icon>
+                        </a>
                         
                         
                         
-                        <a href="/register">Register</a>
-                        <iron-icon icon="icons:add-circle-outline" fill = "blue" style="margin-right: 6px;"></iron-icon>
+                        <a href="/register" style="display: flex; flex-direction: row; align-items: center;">Register
+                            <iron-icon icon="icons:add-circle-outline" fill = "blue" style="margin: 0 6px; max-height: 20px; max-width: 20px;"></iron-icon>
+                        </a>
                         
                         
                     @endif
