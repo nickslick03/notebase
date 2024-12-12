@@ -1,4 +1,4 @@
-@extends('layout.layout', ['title' => 'Upload'])
+@extends('layout.layout', ['title' => 'Upload Resource'])
 
 @section('head-content')
     <style>
@@ -11,9 +11,9 @@
     <label for="course">Select a Course:</label>
     <!--Enrolled Courses to select-->
         <select name="course" id="course">
-            <option value="course1">Course 1</option>
-            <option value="course2">Course 2</option>
-            <option value="course3">Course 3</option>
+            <option value="course1">ART 101</option>
+            <option value="course2">CIS 281</option>
+            <option value="course3">CIS 291</option>
         </select>
         <br>
         <br>
