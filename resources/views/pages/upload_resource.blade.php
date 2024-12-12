@@ -7,25 +7,44 @@
 
 @section('body-content')
 <h1>Resource Upload</h1>
-    <form>
+    <form action="/upload_resource/create" method="post" enctype="multipart/form-data">
+    
+    @csrf {{ csrf_field() }}
+        
     <label for="course">Select a Course:</label>
     <!--Enrolled Courses to select-->
         <select name="course" id="course">
-            <option value="course1">Course 1</option>
-            <option value="course2">Course 2</option>
-            <option value="course3">Course 3</option>
+            @foreach ($courses as $course)
+                <option value="{{ $course->course }}">
+                    {{ $course->title }}
+                </option>
+            @endforeach
         </select>
+        <div>Don't see the course you're looking for? <a href="/course">Add the course here</a> and then upload.</div>
         <br>
         <br>
-        <input type="file" id="file" name="file">
+        <input type="file" id="file" name="file" accept="text/plain,image/*,application/pdf">
+        @error('file')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         <br>
         <br>
         <label for="title">Title:</label>
         <br>
-        <input type="text" id="title" name="title"><br><br>
+        <input type="text" id="title" name="title" value="{{ old('title') }}" required>
+        @error('title')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+        <br>
+        <br>
         <label for="description">Description:</label>
         <br>
-        <input type="text" id="description" name="description"><br><br>
+        <input type="text" id="description" name="description" value="{{ old('description') }}" required>
+        <br>
+        <br>
+        @error('description')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         <input type="submit">
     </form>
 @endsection

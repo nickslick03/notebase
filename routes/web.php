@@ -21,6 +21,9 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 
 Route::get('/course', [CourseController::class, 'index']);
 Route::post('/course/toggle', [CourseController::class, 'toggle']);
+Route::post('/course/toggle', [CourseController::class, 'toggle']);
+Route::get('/course/{course}', [CourseController::class, 'course']);
 
 
 Route::get('/upload_resource', [UploadResource::class, 'index']);
+Route::post('/upload_resource/create', [UploadResource::class, 'create']);
