@@ -39,7 +39,7 @@
                     <a href="/course" style="color: var(--light-text-color)">Courses</a>
                 </div>
                 <!--test-->
-                <div style="display: flex; float: right align-items: center; color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
+                <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; ">
                     <iron-icon icon="icons:add" style="margin-right: 6px;"></iron-icon>
                     <a href="/upload_resource" style="color: var(--light-text-color)">Add Resource</a>
                 </div>

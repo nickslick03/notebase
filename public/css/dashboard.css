@@ -73,3 +73,6 @@
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 }
+a {
+    text-decoration: none;
+}
