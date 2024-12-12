@@ -64,3 +64,6 @@ footer {
 .auto-margin {
     margin: auto;
 }
+a {
+    text-decoration: none;
+}

@@ -1,9 +1,14 @@
-@extends('layout.layout', ['title' => 'Upload'])
+@extends('layout.layout', ['title' => 'Upload Resource'])
+
 
 @section('head-content')
-    <style>
-    </style>
+   <style>
+        input, select {
+           max-width: 400px;
+       }
+   </style>
 @endsection
+
 
 @section('body-content')
 <h1>Resource Upload</h1>

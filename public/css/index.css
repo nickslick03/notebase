@@ -12,15 +12,15 @@
 }
 
 #button {
-    display: flex;
-    justify-content: center;
-}
-
-button {
-    font-size: 45px;
+    font-size: 35px;
     cursor: pointer;
+    color: white;
     background-color: var(--main-color);
     display: inline-block;
-    border-radius: 15px;
-    padding: 10px;
+    border-radius: 50px;
+    padding: 10px 30px;
+    border: none;
+}
+a {
+    text-decoration: none;
 }

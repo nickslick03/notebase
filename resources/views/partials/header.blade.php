@@ -11,8 +11,15 @@
                         <a href="/logout">Logout</a>
                         <iron-icon icon="icons:exit-to-app"></iron-icon>
                     @else
-                        <a href="/login">Login</a>
-                        <a href="/register">Register</a>
+                        
+                        <a href="/login" style="display: flex; flex-direction: row; align-items: center;">Login
+                            <iron-icon icon="icons:account-box" style="margin: 0 12px 0 6px; max-height: 20px; max-width: 20px;"></iron-icon>
+                        </a>
+                        
+                        <a href="/register" style="display: flex; flex-direction: row; align-items: center;">Register
+                            <iron-icon icon="icons:add-box" fill = "blue" style="margin: 0 6px; max-height: 20px; max-width: 20px;"></iron-icon>
+                        </a> 
+                        
                     @endif
                 </div>
             </div>
@@ -32,7 +39,7 @@
                     <a href="/course" style="color: var(--light-text-color)">Courses</a>
                 </div>
                 <!--test-->
-                <div style="display: flex; float: right align-items: center; color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
+                <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; ">
                     <iron-icon icon="icons:add" style="margin-right: 6px;"></iron-icon>
                     <a href="/upload_resource" style="color: var(--light-text-color)">Add Resource</a>
                 </div>
