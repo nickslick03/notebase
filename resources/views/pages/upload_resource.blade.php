@@ -14,7 +14,7 @@
 <h1>Resource Upload</h1>
     <form action="/upload_resource/create" method="post" enctype="multipart/form-data">
     
-    @csrf {{ csrf_field() }}
+    @csrf
         
     <label for="course">Select a Course:</label>
     <!--Enrolled Courses to select-->

@@ -47,7 +47,7 @@
                                     </td>
                                     <td class="text-center">
                                         <form action="course/toggle" method="post">
-                                            @csrf {{ csrf_field() }}
+                                            @csrf
                                             <input type="hidden" name="course" value="{{ $course->course }}">
                                             <input type="hidden" name="add" value="{{ !$course->is_enrolled }}">
                                             <button type="submit" data-is_enrolled="{{ $course->is_enrolled }}">
