@@ -1,10 +1,6 @@
 $('.toggle-star').each(function () {
     const is_starred = $(this).find('[name="is_starred"]')[0].value === '1';
-
-    console.log(is_starred);
-
     $(this).find(`[icon="star${is_starred ? '-border' : ''}"]`).addClass('d-none');
-    
 });
 
 $('.toggle-star').on('submit', async function (e) {

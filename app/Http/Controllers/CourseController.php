@@ -10,14 +10,13 @@ use Illuminate\Support\Facades\DB;
 class CourseController extends Controller
 {
     public function index(Request $request) {
-        if (!session()->has('user')) {
-            return redirect('login?callback_path=' . base64_encode($request->getPathInfo()));
-        }
 
-        $courses = DB::select('
-        select *, exists(select * from associated_course_user asu
-                         where cv.course = asu.course and asu.user = ?) as is_enrolled
-        from course_view cv', [session()->get('user')->user]);
+        $courses = session()->has('user')
+            ? DB::select('
+            select *, exists(select * from associated_course_user asu
+                            where cv.course = asu.course and asu.user = ?) as is_enrolled
+            from course_view cv', [session()->get('user')->user])
+            : DB::select('select * from course_view');
 
         return view('pages.courselist', [
             'courses' => $courses
