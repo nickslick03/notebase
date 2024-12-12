@@ -11,8 +11,16 @@
                         <a href="/logout">Logout</a>
                         <iron-icon icon="icons:exit-to-app"></iron-icon>
                     @else
+                        
                         <a href="/login">Login</a>
+                        <iron-icon icon="icons:account-box" style="margin-right: 6px;"></iron-icon>
+                        
+                        
+                        
                         <a href="/register">Register</a>
+                        <iron-icon icon="icons:add-circle-outline" fill = "blue" style="margin-right: 6px;"></iron-icon>
+                        
+                        
                     @endif
                 </div>
             </div>
