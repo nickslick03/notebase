@@ -3,6 +3,9 @@
     max-height: 20px;
     max-width: 20px;
 }
+a.courseLinks{
+    text-decoration: underline;
+}
 .class-container {
     display: flex;
     align-items: center;

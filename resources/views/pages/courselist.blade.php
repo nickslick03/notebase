@@ -38,7 +38,7 @@
                                     data-title="{{ $course->title }}"
                                 >
                                     <td class="course-td">
-                                        <a href="/course/{{ $course->course }}" style="font-weight: 500; color: var(--text-color);">
+                                        <a class = "courseLinks" href="/course/{{ $course->course }}" style="font-weight: 500; color: var(--text-color);">
                                             {{ $course->subject_code }} {{ $course->course_code }}
                                         </a>
                                     </td>
