@@ -7,9 +7,9 @@ window.onclick = function(event) {
     }
 }
 
-function openModal() {
-    modal.style.display = 'block';
-}
+document.querySelector('.note-preview').addEventListener('click', function(e) {
+    modal.style.display = "block";
+});
 
 function closeModal() {
     modal.style.display = 'none';

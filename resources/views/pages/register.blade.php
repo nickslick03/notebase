@@ -50,6 +50,14 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
+        <!--Capturing the Role-->
+        <div class="mb-3">
+            <input type="hidden" name="role" id="role" value="1">             
+        </div>
+        @error('role')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
         <!--Capturing the Password-->
         <div class="mb-3">
             <label class="form-label" for="password">Password:</label>
