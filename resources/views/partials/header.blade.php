@@ -16,12 +16,9 @@
                             <iron-icon icon="icons:account-box" style="margin: 0 12px 0 6px; max-height: 20px; max-width: 20px;"></iron-icon>
                         </a>
                         
-                        
-                        
                         <a href="/register" style="display: flex; flex-direction: row; align-items: center;">Register
-                            <iron-icon icon="icons:add-circle-outline" fill = "blue" style="margin: 0 6px; max-height: 20px; max-width: 20px;"></iron-icon>
-                        </a>
-                        
+                            <iron-icon icon="icons:add-box" fill = "blue" style="margin: 0 6px; max-height: 20px; max-width: 20px;"></iron-icon>
+                        </a> 
                         
                     @endif
                 </div>
