@@ -34,7 +34,7 @@
 
         <input type="submit" class="mb-4 btn btn-primary" style="background: var(--main-color); border: none; color: var(--text-color);">
     </form>
-    <div class="text-primary">
+    <div class="text-primary text-center">
         {{ $message }}
     </div>
 @endsection

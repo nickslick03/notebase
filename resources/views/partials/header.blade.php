@@ -24,8 +24,8 @@
                 </div>
             </div>
         </div>
-        @if(session()->has('user'))
-            <div class="navigation" style="background: white; border-radius: 25px; display: flex; align-items: center; margin-top: 4px;">
+        <div class="navigation" style="background: white; border-radius: 25px; display: flex; align-items: center; margin-top: 4px;">
+            @if(session()->has('user'))
                 <!--Account-->
                 <div style="display: flex; flex-box: row; align-items: center; color: var(--main-color); padding: 2px 6px;" onclick="expandSidebar()">
                     <iron-icon icon="icons:account-circle" style="margin-right: 6px;"></iron-icon>
@@ -34,19 +34,20 @@
                 <!--Dashboard-->
                 <div style="color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
                     <a href="/dashboard" style = "display: flex; flex-direction: row; align-items: center;"><iron-icon icon="icons:date-range" style="margin-right: 6px; color: var(--main-color);"></iron-icon>
-                   <div style="color: var(--light-text-color)">Dashboard</div></a>
+                    <div style="color: var(--light-text-color)">Dashboard</div></a>
                 </div>
-                <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
-                    <a href="/course" style = "display: flex; flex-direction: row; align-items: center;"><iron-icon icon="icons:chrome-reader-mode" style="margin-right: 6px; color: var(--main-color);"></iron-icon>
-                    <div style="color: var(--light-text-color)">Courses</div></a>
-                </div>
-                <!--test-->
+                <!--Resource-->
                 <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; ">
                     <a href="/upload_resource" style = "display: flex; flex-direction: row; align-items: center;"><iron-icon icon="icons:add" style="margin-right: 6px; color: var(--main-color);"></iron-icon>
                     <div style="color: var(--light-text-color);">Add Resource</div></a>
                 </div>
+            @endif
+            <!--Course-->
+            <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
+                <a href="/course" style = "display: flex; flex-direction: row; align-items: center;"><iron-icon icon="icons:chrome-reader-mode" style="margin-right: 6px; color: var(--main-color);"></iron-icon>
+                <div style="color: var(--light-text-color)">Courses</div></a>
             </div>
-        @endif
+        </div>
     </div>
 </header>
 <script src="/js/sidebar.js"></script>

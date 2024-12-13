@@ -19,14 +19,20 @@
         </form>     
         <!-- Classes -->
         <section style="margin: 24px; background: #f5f5f5; padding: 12px; border-radius: 10px;">
-            <div class="light-text" style="text-align: center; font-style: italic; margin-bottom: 10px;">Click the plus button beside a class to add it to your enrolled courses</div>
+            @if(session()->has('user'))
+                <div class="light-text" style="text-align: center; font-style: italic; margin-bottom: 10px;">
+                    Click the plus button beside a class to add it to your enrolled courses
+                </div>
+            @endif
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
                             <th>Course</th>
                             <th>Title</th>
-                            <th class="text-center">Add / Remove</th>
+                            @if (session()->has('user'))
+                                <th class="text-center">Add / Remove</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody id="courses">
@@ -45,17 +51,19 @@
                                     <td >
                                         {{ $course->title }}
                                     </td>
-                                    <td class="text-center">
-                                        <form action="course/toggle" method="post">
-                                            @csrf
-                                            <input type="hidden" name="course" value="{{ $course->course }}">
-                                            <input type="hidden" name="add" value="{{ !$course->is_enrolled }}">
-                                            <button type="submit" data-is_enrolled="{{ $course->is_enrolled }}">
-                                                <iron-icon icon="add" class="plus-icon"></iron-icon>
-                                                <iron-icon icon="clear" class="plus-icon"></iron-icon>
-                                            </button>
-                                        </form>
-                                    </td>
+                                    @if (session()->has('user'))
+                                        <td class="text-center">
+                                            <form action="course/toggle" method="post">
+                                                @csrf
+                                                <input type="hidden" name="course" value="{{ $course->course }}">
+                                                <input type="hidden" name="add" value="{{ !$course->is_enrolled }}">
+                                                <button type="submit" data-is_enrolled="{{ $course->is_enrolled }}">
+                                                    <iron-icon icon="add" class="plus-icon"></iron-icon>
+                                                    <iron-icon icon="clear" class="plus-icon"></iron-icon>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    @endif
                                 </tr>    
                             @endforeach
                         @endisset
