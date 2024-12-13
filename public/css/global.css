@@ -72,3 +72,8 @@ a {
     border: none;
     background: none;
 }
+.toggle-star {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
