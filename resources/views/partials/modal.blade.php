@@ -17,6 +17,7 @@
                 <a id="edit-resource-anchor">Edit</a>
             </button>
             <form action="/resource/delete" method="post">
+                @csrf
                 <input type="hidden" name="resource" id="delete-resource-field">
                 <button class="btn btn-outline-danger editable" type="submit">Delete</button>
             </form>                
