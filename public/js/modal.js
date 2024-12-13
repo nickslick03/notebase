@@ -24,7 +24,7 @@ $('.note-preview').on('click', async function () {
         })
     });
     if (res.ok) {
-        $('modal-data-container').empty();
+        $('#modal-data-container').empty();
         const type = res.headers.get('Content-Type');
         const filename = res.headers.get('Content-Disposition').replace('attachment; filename=', '');
         $('#filename').text(filename);
@@ -43,7 +43,7 @@ $('.note-preview').on('click', async function () {
         const data = !type.includes('text') ? URL.createObjectURL(raw) : raw;
         $object[0][attr] = data;
         $('#modal-data-container').append($object);
-        modal.style.display = 'block';
+        modal.style.display = 'flex';
     }
     console.log(res.statusText);
     
