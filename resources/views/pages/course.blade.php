@@ -2,6 +2,7 @@
 
 @section('head-content')
     <link rel="stylesheet" href="/css/course.css">
+    <link rel="stylesheet" href="/css/note.css">
 @endsection
 
 @section('body-content')
