@@ -1,0 +1,10 @@
+form {
+    border: 2px solid #d4d4d4;
+    width: 400px; padding: 12px;
+    margin: auto auto 24px auto;
+    border-radius: 20px;
+}
+
+input, select {
+    max-width: 400px;
+}
