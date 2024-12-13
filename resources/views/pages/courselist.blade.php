@@ -5,22 +5,23 @@
 @endsection
 
 @section('body-content')
-    <main style="padding: 12px;">
-        <h2 style="text-align: center; margin-bottom: 12px;">Course List</h2>
+    <main id = "content">
+        <h2 id = "title">Course List</h2>
+        <!--Search Bar-->
         <form id="search-form">
-            <div style="display: flex; justify-content: center;">
-                <div style="display: flex; padding: 4px; border-radius: 20px; background-color: var(--light-text-color); width: fit-content;">
-                    <input id="search-text" type="text" placeholder="Search" style="background: white; border: none; border-radius: 20px; padding: 0 4px; width: 100%; max-width: 300px;">  
+            <div id = "display">
+                <div id = "search">
+                    <input id="search-text" type="text" placeholder="Search" class = "bar">  
                     <button type="submit">
-                        <iron-icon icon="icons:search" style="margin-right: 6px; color: white"></iron-icon>
+                        <iron-icon icon="icons:search" id = "searchIcon"></iron-icon>
                     </button>
                 </div>  
             </div>    
         </form>     
         <!-- Classes -->
-        <section style="margin: 24px; background: #f5f5f5; padding: 12px; border-radius: 10px;">
+        <section id = "classList">
             @if(session()->has('user'))
-                <div class="light-text" style="text-align: center; font-style: italic; margin-bottom: 10px;">
+                <div class="light-text" id = "classText">
                     Click the plus button beside a class to add it to your enrolled courses
                 </div>
             @endif
@@ -44,13 +45,14 @@
                                     data-title="{{ $course->title }}"
                                 >
                                     <td class="course-td">
-                                        <a class = "courseLinks" href="/course/{{ $course->course }}" style="font-weight: 500; color: var(--text-color);">
+                                        <a class = "courseLinks" href="/course/{{ $course->course }}" id = "links">
                                             {{ $course->subject_code }} {{ $course->course_code }}
                                         </a>
                                     </td>
                                     <td >
                                         {{ $course->title }}
                                     </td>
+                                    <!--Add and Drop Classes-->
                                     @if (session()->has('user'))
                                         <td class="text-center">
                                             <form action="course/toggle" method="post">

@@ -1,6 +1,7 @@
-form {
+form, .center {
     border: 2px solid #d4d4d4;
-    width: 400px; padding: 12px;
+    width: 400px;
+    padding: 12px;
     margin: auto auto 24px auto;
     border-radius: 20px;
 }
@@ -8,3 +9,35 @@ form {
 input, select {
     max-width: 400px;
 }
+
+h1{
+    text-align: center;
+}
+.form-item {
+    margin: 24px auto;
+}
+.extras{
+    display: flex;
+    flex-direction: column;
+}
+
+
+#courseText {
+    font-style: italic;
+    text-align: center;
+}
+
+.flexy{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.courseLink{
+    color: var(--light-text-color);
+}
+
+.labelMargin{
+    margin-bottom: 4px;
+}
+

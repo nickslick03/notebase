@@ -2,12 +2,12 @@
 
 
 @section('head-content')
-<link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/form.css">
 @endsection
 
 
 @section('body-content')
-<h1 style="text-align: center;"> Edit Resource</h1>
+<h1> Edit Resource</h1>
    <form action="" method="post">
        <div class="mb-3"> <p>Here is the current file: </p>
        <br>
@@ -25,6 +25,7 @@
        <br>
        <input type="text" id="title" name="title" value =""><br><br>
        </div>
+       <!--File Description-->
        <div class="mb-3">
        <label for="description">Description:</label>
        <br>
