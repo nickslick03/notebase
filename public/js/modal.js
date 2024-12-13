@@ -14,8 +14,34 @@ window.onclick = function(event) {
     }
 }
 
-document.querySelector('.note-preview').addEventListener('click', function(e) {
-    modal.style.display = "block";
+$('.note-preview').on('click', async function () {
+    const resource = $(this).find('[name="resource"]')[0].value;
+    const res = await fetch('/resource/get_data', {
+        method: 'post',
+        body: new URLSearchParams({
+            _token: $('meta[name="csrf-token"]').attr('content'),
+            resource
+        })
+    });
+    if (res.ok) {
+        $('modal-data-container').empty();
+        const type = res.headers.get('Content-Type');
+        const filename = res.headers.get('Content-Disposition').replace('attachment; filename=', '');
+        $('#filename').text(filename);
+        const raw = await (type.includes('text') ? res.text() : res.blob());
+        const [tag, attr] = type.includes('pdf')
+        ? ['object', 'data']
+        : type.includes('image')
+        ? ['img', 'src']
+        : ['pre', 'textContent'];
+        const $object = $(`<${tag}>`);
+        const data = !type.includes('text') ? URL.createObjectURL(raw) : raw;
+        $object[0][attr] = data;
+        $('#modal-data-container').append($object);
+        modal.style.display = 'block';
+    }
+    console.log(res.statusText);
+    
 });
 
 function closeModal() {

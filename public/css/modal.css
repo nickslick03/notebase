@@ -22,7 +22,7 @@
 }
 
 .container {
-    padding: 8px 16px;
+    padding: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,6 +49,22 @@
     margin: auto;
     border: 1px solid #888;
     max-height: fit-content;
+    padding: 0 20px;
+}
+
+#modal-data-container {
+    border: 1px solid #888;
+}
+
+#modal-data-container > * {
+    width: 100vw;
+    max-width: 500px;
+    height: 80vh;
+}
+
+#modal-data-container > img {
+    width: initial !important;
+    height: initial;
 }
 
 /* Add Zoom Animation */
