@@ -27,7 +27,7 @@
         @if(session()->has('user'))
             <div class="navigation" style="background: white; border-radius: 25px; display: flex; align-items: center; margin-top: 4px;">
                 <!--Account-->
-                <div style="display: flex; flex-box: row; align-items: center; color: var(--main-color); padding: 2px 6px;">
+                <div style="display: flex; flex-box: row; align-items: center; color: var(--main-color); padding: 2px 6px;" onclick="expandSidebar()">
                     <iron-icon icon="icons:account-circle" style="margin-right: 6px;"></iron-icon>
                     <div id="accountbtn" style="color: var(--light-text-color)" role="button">Account</div>
                 </div>
@@ -48,4 +48,5 @@
             </div>
         @endif
     </div>
- </header>
+</header>
+<script src="/js/sidebar.js"></script>
