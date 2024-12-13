@@ -58,7 +58,6 @@
                 </div>
             </div>
         </section>
-        @include('partials.modal')
         <script src="/js/starred_resources.js"></script>
     </main>
 @endsection
