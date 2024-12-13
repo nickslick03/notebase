@@ -38,25 +38,21 @@
                 <!-- Starred Notes -->
                 <div style="overflow-x: auto;">
                     <div style="display: flex;">
-                        <div class="note-preview">
-                            <div class="note-information">
-                                <div style="background: white; width: 35px; border-radius: 20px;">
-                                    <iron-icon icon="star" style="padding: 5px; color: var(--main-color);"></iron-icon>
-                                </div>
-                                <div style="padding: 0 12px; display: flex; margin: auto; flex-direction: column;">
-                                    <div style="margin-right: 4px;">STAT 269</div>
-                                    <div>Chapter 3 Unit 2</div>
-                                </div>
-                            </div>
-                            <img class="note-img" src="https://wiki.theplaz.com/w/images/thumb/American_Studies_Chap_17_-_Reconstruction_-_Politics_of_Reconstruction_Page_1.jpg/300px-American_Studies_Chap_17_-_Reconstruction_-_Politics_of_Reconstruction_Page_1.jpg">
-                        </div>
                         @isset($starred_resources)
                             @foreach ($starred_resources as $resource)
                                 <div class="note-preview">
                                     <div class="note-information">
-                                        <div style="background: white; width: 35px; border-radius: 20px;">
-                                            <iron-icon icon="star" style="padding: 5px; color: var(--main-color);"></iron-icon>
-                                        </div>
+                                        <form class="toggle-star" action="/resource/toggle_star" method="post">
+                                            @csrf
+                                            <input type="hidden" name="resource" value="{{ $resource->resource }}">
+                                            <input type="hidden" name="is_starred" value="1">
+                                            <button type="submit">
+                                                <div style="background: white; width: 40px; border-radius: 20px;">
+                                                    <iron-icon icon="star-border" style="padding: 5px; color: var(--main-color);"></iron-icon>
+                                                    <iron-icon icon="star" style="padding: 5px; color: var(--main-color);"></iron-icon>
+                                                </div>
+                                            </button>
+                                        </form>
                                         <div style="padding: 0 12px; display: flex; margin: auto;">
                                             <div style="margin-right: 4px;">{{ $resource->code }}</div>
                                             <div>{{ $resource->title }}</div>
@@ -72,4 +68,5 @@
             </section>
         </main>
     </div>
+<script src="/js/course.js"></script>
 @endsection

@@ -67,3 +67,8 @@ footer {
 a {
     text-decoration: none;
 }
+
+.toggle-star button {
+    border: none;
+    background: none;
+}
