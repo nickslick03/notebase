@@ -2,17 +2,7 @@
 
 
 @section('head-content')
-
-   <style>
-        input, select {
-            max-width: 400px;
-        }
-        #current-resource-display {
-            border: 1px solid grey;
-            max-height: 300px;
-            overflow-x: scroll;
-        }
-   </style>
+<link rel="stylesheet" href="/css/form.css">
 @endsection
 
 
