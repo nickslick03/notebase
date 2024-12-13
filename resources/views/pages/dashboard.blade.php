@@ -29,6 +29,8 @@
                                     </div>    
                                 </a>
                             @endforeach
+                        @else
+                                <!-- NO COURSES -->
                         @endisset
                     </div>
                 </div>
@@ -61,8 +63,9 @@
                                     <img class="note-img" src="https://wiki.theplaz.com/w/images/thumb/American_Studies_Chap_17_-_Reconstruction_-_Politics_of_Reconstruction_Page_1.jpg/300px-American_Studies_Chap_17_-_Reconstruction_-_Politics_of_Reconstruction_Page_1.jpg">
                                 </div>
                             @endforeach
+                        @else
+                            <!-- NO STARRED RESOURCES -->
                         @endisset
-                        
                     </div>
                 </div>
             </section>
