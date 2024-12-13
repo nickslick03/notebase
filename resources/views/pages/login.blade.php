@@ -1,19 +1,13 @@
 @extends('layout.layout', ['title' => 'Login'])
 
 @section('head-content')
-    <style>
-        input, select {
-            max-width: 400px;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/form.css">
 @endsection
 
 @section('body-content')
-    <h1 style="text-align: center;">Login</h1>
-    <form action="" method="post" style="border: 2px solid #d4d4d4; width: 400px; padding: 12px; margin: auto auto 24px auto; border-radius: 20px;">
-
+    <h1>Login</h1>
+    <form action="" method="post">
         @csrf
-
         <!--Capturing the Username-->
         <div class="mb-3">
             <label class="form-label" for="username">Username:</label>
@@ -32,6 +26,7 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
+        <!--Submit Button-->
         <div  style="display: flex; justify-content: center;">
             <input type="submit" class="btn btn-primary" style="margin-bottom: 4px; background: var(--main-color); border: none; color: var(--text-color);">
         </div>

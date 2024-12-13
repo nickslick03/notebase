@@ -1,17 +1,12 @@
 @extends('layout.layout', ['title' => 'Register'])
 
 @section('head-content')
-    <style>
-        input, select {
-            max-width: 400px;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/form.css">
 @endsection
 
 @section('body-content')
-    <h1 style="text-align: center;">Register</h1>
-    <form action="" method="post" style="border: 2px solid #d4d4d4; width: 400px; padding: 12px; margin: auto auto 24px auto; border-radius: 20px;">
-        
+    <h1>Register</h1>
+    <form action="" method="post">
         @csrf
 
         <!--Capturing the first name-->
