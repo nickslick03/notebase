@@ -105,22 +105,107 @@ class Resource extends Controller
             ->header('Content-Disposition', 'attachment; filename=' . $resource->filename);
     }
 
-    public function edit(Request $request) {
+    public function get_edit(Request $request) {
         if (!session()->has('user')) {
             return redirect('login?callback_path=' . base64_encode($request->getPathInfo()));
         }
 
-        $resource = DB::select('
-        select resource, title, description, user_author
+        $resources = DB::select('
+        select resource, title, description, user_author, course
         from resource
         where resource = ?',
         [$request->route('resource')]);
 
-        if (count($resource) === 0) {
-            
+        if (count($resources) === 0) {
+            return abort(404, 'The resource doesn\'t exist');
         }
 
-        return view('pages.edit_resource');
+        if ($resources[0]->user_author !== session()->get('user')->user) {
+            return abort(403, 'You did not create this resource, so you can\'t edit it.');
+        }
+
+        $courses = DB::select('
+        select cv.title, acu.course
+        from associated_course_user acu
+        inner join course_view cv
+            on acu.course = cv.course and acu.user = ?', 
+        [session()->get('user')->user]);
+
+        return view('pages.edit_resource', [
+            'resource' => $resources[0],
+            'courses' => $courses
+        ]);
+    }
+
+    public function post_edit(Request $request) {
+        if (!session()->has('user')) {
+            return redirect('login?callback_path=' . base64_encode($request->getPathInfo()));
+        }
+
+        $request->validate([
+            'resource' => 'required',
+            'course' => 'required', // You can modify this validation as per your needs
+            'file' => 'nullable|file|mimes:txt,pdf,jpeg,png,jpg,gif|max:16384', // Validate file type and size
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:500',
+        ]);
+
+        $r = DB::select('
+        select user_author from resource
+        where resource = ?',
+        [$request->resource]);
+
+        if (count($r) === 0) {
+            return abort(404, 'The resource doesn\'t exist');
+        }
+
+        if (session()->get('user')->user !== $r[0]->user_author) {
+            return abort(403, 'You did not create this resource, so you can\'t edit it.');   
+        }
+
+        DB::update('
+        update resource
+        set course = ?, title = ?, description = ?
+        where resource = ?',
+        [$request->course, $request->title, $request->description, $request->resource]);
+
+        if ($request->file) {
+            $file = $request->file('file');
+            $data = file_get_contents($file->getRealPath());
+
+            DB::update('
+            update resource
+            set filename = ?, filetype = ?, data = ?
+            where resource = ?',
+            [
+                $file->getClientOriginalName(),
+                $file->getMimeType(),
+                $data,
+                $request->resource
+            ]);
+        }
+
+        return redirect('/course/' . $request->course);
+    }
+
+    public function post_delete(Request $request) {
+        if (!session()->has('user')) {
+            return redirect('login');
+        }
+
+        $r = DB::select('select user_author from resource where resource = ?', [$request->resource]);
+
+        if (count($r) === 0) {
+            return abort(404, "Resource not found");
+        }
+
+        if (session()->get('user')->user !== $r[0]->user_author) {
+            return abort(403, 'You did not create this resource, so you can\'t delete it.');   
+        }
+
+        DB::delete('delete from resource where resource = ?', [$request->resource]);
+
+        return redirect('/dashboard');
     }
 }
 
