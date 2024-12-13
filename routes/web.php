@@ -26,6 +26,9 @@ Route::get('/course/{course}', [CourseController::class, 'course']);
 
 Route::post('/resource/toggle_star', [Resource::class, 'toggle_star']);
 Route::post('/resource/get_data', [Resource::class, 'get_data']);
+Route::get('/resource/edit/{resource}', [Resource::class, 'edit']);
+Route::post('/resource/delete', [Resource::class, 'delete']);
+
 
 Route::get('/upload_resource', [Resource::class, 'index']);
 Route::post('/upload_resource/create', [Resource::class, 'create']);

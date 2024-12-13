@@ -64,8 +64,10 @@ $('form[action="course/toggle"]').on('submit', async function (e) {
 
     add_input.value = add_input.value === '1' ? '0' : '1';
 
-    if (res.status <= 299) {
+    if (res.ok) {
         $(this).find('[icon="add"]')[0].classList.toggle('d-none');
         $(this).find('[icon="clear"]')[0].classList.toggle('d-none');
+    }  else if (res.status === 419)  { // token timed out
+        location.reload();
     }
 });

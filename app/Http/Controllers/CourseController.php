@@ -62,12 +62,12 @@ class CourseController extends Controller
         }
 
         $resources = DB::select('
-        select r.resource, r.title, (sru.user) is not null as is_starred
+        select r.resource, r.title, (sru.user) is not null as is_starred, (r.user_author = ?) as is_author
         from resource r
         left join starred_resource_user sru
             on r.resource = sru.resource
         where course = ?;', 
-        [$request->route('course')]);
+        [session()->get('user')->user, $request->route('course')]);
 
         return view('pages.course', [
             'course' => $courses[0],

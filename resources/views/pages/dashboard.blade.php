@@ -42,7 +42,7 @@
                     <div style="display: flex;">
                         @isset($starred_resources)
                             @foreach ($starred_resources as $resource)
-                                <div class="note-preview">
+                                <div class="note-preview" data-resource={{ $resource->resource }}  data-is_author="{{ $resource->is_author }}">
                                     <div class="note-information">
                                         <form class="toggle-star" action="/resource/toggle_star" method="post">
                                             @csrf

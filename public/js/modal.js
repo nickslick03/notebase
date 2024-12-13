@@ -15,6 +15,15 @@ window.onclick = function(event) {
 }
 
 $('.note-preview').on('click', async function () {
+    const is_author = $(this).attr('data-is_author') === '1';
+    if (is_author) {
+        $('#modal-button-container .editable').removeClass('d-none');
+        $('#edit-resource-anchor').attr('href', `/resource/edit/${$(this).attr('data-resource')}`);
+        $('#delete-resource-field').attr('value', $(this).attr('data-resource'));
+    } else {
+        $('#modal-button-container .editable').addClass('d-none');
+    }
+
     const resource = $(this).find('[name="resource"]')[0].value;
     const res = await fetch('/resource/get_data', {
         method: 'post',
@@ -24,6 +33,7 @@ $('.note-preview').on('click', async function () {
         })
     });
     if (res.ok) {
+        modal.style.display = 'flex';
         $('#modal-data-container').empty();
         const type = res.headers.get('Content-Type');
         const filename = res.headers.get('Content-Disposition').replace('attachment; filename=', '');
@@ -43,7 +53,8 @@ $('.note-preview').on('click', async function () {
         const data = !type.includes('text') ? URL.createObjectURL(raw) : raw;
         $object[0][attr] = data;
         $('#modal-data-container').append($object);
-        modal.style.display = 'flex';
+    } else if (res.status === 419)  { // token timed out
+        location.reload();
     }
     console.log(res.statusText);
     

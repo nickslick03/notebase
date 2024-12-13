@@ -13,10 +13,9 @@
 @section('body-content')
 <h1 style="text-align: center;"> Edit Resource</h1>
    <form action="" method="post" style="border: 2px solid #d4d4d4; width: 400px; padding: 12px; margin: auto auto 24px auto; border-radius: 20px;">
-       <label for="course">Select a Course:</label>
        <div class="mb-3"> <p>Here is the current file: </p>
        <br>
-       <img src = "">
+       <div id="edit-resource-display"></div>
        <br>
        <p>If you want to change the note file upload a new note: </p>
        </div>

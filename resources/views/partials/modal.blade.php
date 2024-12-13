@@ -11,8 +11,15 @@
         <div id="modal-data-container" class="container">
             
         </div>
-        <div class="container">
-            <button type="button" onclick="closeModal()" class="cancelbtn">Close</button>
+        <div class="my-3 d-flex justify-content-center gap-2" id="modal-button-container">
+            <button type="button" onclick="closeModal()" class="btn btn-danger">Close</button>
+            <button class="btn btn-outline-primary editable">
+                <a id="edit-resource-anchor">Edit</a>
+            </button>
+            <form action="/resource/delete" method="post">
+                <input type="hidden" name="resource" id="delete-resource-field">
+                <button class="btn btn-outline-danger editable" type="submit">Delete</button>
+            </form>                
         </div>
     </div>
 </div>

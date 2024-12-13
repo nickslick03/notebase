@@ -17,8 +17,10 @@ $('.toggle-star').on('submit', async function (e) {
     });
     const is_starred = $(this).find('[name="is_starred"]')[0].value === '1';
     $(this).find('[name="is_starred"]')[0].value = is_starred ? 0 : 1;
-    if (res.status <= 299) {
+    if (res.ok) {
         ['star', 'star-border'].map(s => 
             $(this).find(`[icon="${s}"]`).toggleClass('d-none'));
+    }  else if (res.status === 419)  { // token timed out
+        location.reload();
     }
 });

@@ -55,7 +55,7 @@ class Resource extends Controller
             $request->description
         ]);
 
-        return redirect('/dashboard');
+        return redirect("/course/" . $request->course);
 
     }
 
@@ -103,6 +103,24 @@ class Resource extends Controller
         return response($resource->data)
             ->header('Content-Type', $resource->filetype)
             ->header('Content-Disposition', 'attachment; filename=' . $resource->filename);
+    }
+
+    public function edit(Request $request) {
+        if (!session()->has('user')) {
+            return redirect('login?callback_path=' . base64_encode($request->getPathInfo()));
+        }
+
+        $resource = DB::select('
+        select resource, title, description, user_author
+        from resource
+        where resource = ?',
+        [$request->route('resource')]);
+
+        if (count($resource) === 0) {
+            
+        }
+
+        return view('pages.edit_resource');
     }
 }
 

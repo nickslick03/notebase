@@ -12,20 +12,22 @@ class DashboardController extends Controller
             return redirect('login?callback_path=' . base64_encode($request->getPathInfo()));
         }
 
+        $user_id = session()->get('user')->user;
+
         $courses = DB::select('
         select * from course_view cv
         join associated_course_user acu
             on cv.course = acu.course and acu.user = ?',
-        [session()->get('user')->user]);
+        [$user_id]);
 
         $starred_resources = DB::select("
-        select r.resource, r.title, concat(subject_code, ' ', course_code) as code 
+        select r.resource, r.title, concat(subject_code, ' ', course_code) as code, (r.user_author = ?) as is_author
         from resource r
         join starred_resource_user sru
             on r.resource = sru.resource and user = ?
         join course_view cv
             on cv.course = r.course",
-        [session()->get('user')->user]);
+        [$user_id, $user_id]);
 
         return view('pages.dashboard', [
             'courses' => $courses,
