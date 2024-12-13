@@ -11,9 +11,6 @@
             <img style="border: 1px solid #cccccc;" src="https://wiki.theplaz.com/w/images/thumb/American_Studies_Chap_17_-_Reconstruction_-_Politics_of_Reconstruction_Page_1.jpg/300px-American_Studies_Chap_17_-_Reconstruction_-_Politics_of_Reconstruction_Page_1.jpg">
         </div>
         <div class="container">
-            <!-- <div style="background: var(--main-color); border-radius: 30px; margin: auto auto auto 0;">
-                <iron-icon icon="icons:file-download" style="color: white; padding: 12px;"></iron-icon>
-            </div> -->
             <button type="button" onclick="closeModal()" class="cancelbtn">Close</button>
         </div>
     </div>
