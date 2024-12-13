@@ -3,13 +3,13 @@
     height: 5px;
 }
 ::-webkit-scrollbar-track {
-    background: white;
+    background: white !important;
 }
 ::-webkit-scrollbar-thumb {
-    background: white;
+    background: white !important;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: white;
+    background: white !important;
 }
 .section-title {
     padding-left: 14px;
