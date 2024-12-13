@@ -49,25 +49,27 @@
                     <div style="display: flex;">
                         @if(count($starred_resources) !== 0)
                             @foreach ($starred_resources as $resource)
-                                <div class="note-preview" data-resource={{ $resource->resource }}  data-is_author="{{ $resource->is_author }}">
+                                <div class="note-preview" style="margin: 4px 14px;" data-resource={{ $resource->resource }}  data-is_author={{ $resource->is_author }}>
                                     <div class="note-information">
                                         <form class="toggle-star" action="/resource/toggle_star" method="post">
                                             @csrf
                                             <input type="hidden" name="resource" value="{{ $resource->resource }}">
                                             <input type="hidden" name="is_starred" value="1">
                                             <button type="submit">
-                                                <div style="background: white; width: 40px; border-radius: 20px;">
-                                                    <iron-icon icon="star-border" style="padding: 5px; color: var(--main-color);"></iron-icon>
-                                                    <iron-icon icon="star" style="padding: 5px; color: var(--main-color);"></iron-icon>
+                                                <div style="background: white; padding: 4px; width: fit-content; border-radius: 20px;">
+                                                    <iron-icon icon="star-border" style="color: var(--main-color);"></iron-icon>
+                                                    <iron-icon icon="star" style="color: var(--main-color);"></iron-icon>
                                                 </div>
                                             </button>
                                         </form>
                                         <div style="padding: 0 12px; display: flex; margin: auto;">
-                                            <div style="margin-right: 4px;">{{ $resource->code }}</div>
                                             <div>{{ $resource->title }}</div>
                                         </div>
                                     </div>
-                                    <img class="note-img" src="https://wiki.theplaz.com/w/images/thumb/American_Studies_Chap_17_-_Reconstruction_-_Politics_of_Reconstruction_Page_1.jpg/300px-American_Studies_Chap_17_-_Reconstruction_-_Politics_of_Reconstruction_Page_1.jpg">
+                                    <div style="height: 3px; width: 25px; background: #d4d4d4;"></div>
+                                    <div style="box-shadow: 0 0px 4px 1px #c2c2c2; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 50px; min-width: 75px; min-height: 75px; max-width: 75px; max-height: 75px;">
+                                        <img class="note-img" src="/img/img.png">
+                                    </div>
                                 </div>
                             @endforeach
                         @else

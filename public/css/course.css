@@ -22,34 +22,31 @@
     padding: 12px;
 }
 .note-preview {
-    height: 248px;
     min-width: 225px;
-    width: 225px;
-    margin: 12px 24px 24px 24px;
-    border-radius: 25px;
-    box-shadow: 0 0px 5px 4px #f0f0f0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 .note-information {
-    height: 35px;
+    height: 60px;
+    width: 100%;
     padding: 6px;
     color: var(--text-color);
     text-align: center;
-    background: white;
+    background: var(--main-color);
+    border-radius: 30px;
     display: flex;
     flex-direction: row;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    border-bottom: 3px solid #f2f2f2;
+    line-height: 120%;
 }
 .note-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-}
-.official {
-    border-bottom: 3px solid var(--main-color);
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: contain;
+    opacity: .7;
+    border-radius: 25px;
 }
 /* Unit Section */
 .chapter {
