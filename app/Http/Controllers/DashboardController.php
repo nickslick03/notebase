@@ -19,11 +19,12 @@ class DashboardController extends Controller
         [session()->get('user')->user]);
 
         $starred_resources = DB::select("
-        select r.*, concat(subject_code, ' ', course_code) as code from resource r
+        select r.resource, r.title, concat(subject_code, ' ', course_code) as code 
+        from resource r
         join starred_resource_user sru
             on r.resource = sru.resource and user = ?
         join course_view cv
-            on cv.course = r.course;",
+            on cv.course = r.course",
         [session()->get('user')->user]);
 
         return view('pages.dashboard', [

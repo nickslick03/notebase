@@ -68,5 +68,5 @@
             </section>
         </main>
     </div>
-<script src="/js/course.js"></script>
+<script src="/js/starred_resources.js"></script>
 @endsection

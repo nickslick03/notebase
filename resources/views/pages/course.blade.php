@@ -35,7 +35,7 @@
             <div class="note-section">
                 <div style="display: flex; flex-wrap: wrap;">
                     @foreach ($resources as $resource)
-                        <div class="note-preview" data-resource="{{ $resource->resource }}" data-filename="{{ $resource->filename }}" data-file_extension="{{ $resource->file_extension }}">
+                        <div class="note-preview">
                             <div class="official note-information">
                                 <form class="toggle-star" action="/resource/toggle_star" method="post">
                                     @csrf
@@ -59,6 +59,6 @@
             </div>
         </section>
         @include('partials.modal')
-        <script src="/js/course.js"></script>
+        <script src="/js/starred_resources.js"></script>
     </main>
 @endsection

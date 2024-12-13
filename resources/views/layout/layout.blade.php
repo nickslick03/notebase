@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/sidebar.css">
     <link rel="stylesheet" href="/css/modal.css">
+
+    <!-- csrf token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
 <body>
     @include('partials.header')

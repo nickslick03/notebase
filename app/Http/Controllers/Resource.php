@@ -42,11 +42,10 @@ class Resource extends Controller
 
         DB::insert(
         'insert into resource 
-        (filename, filetype, file_extension, data, user_author, course, status, chapter, title, description)
-        values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [
+        (filename, filetype, data, user_author, course, status, chapter, title, description)
+        values (?, ?, ?, ?, ?, ?, ?, ?, ?)', [
             $file->getClientOriginalName(),
             $file->getMimeType(),
-            $file->getExtension(),
             $data,
             session()->get('user')->user,
             $request->course,
@@ -84,6 +83,26 @@ class Resource extends Controller
         return response()->json([
             'status' => 'success'
         ]);
+    }
+
+    public function get_data(Request $request) {
+
+        if (!session()->has('user')) {
+            return response()->json([
+                'status' => 'error',
+                'error' => 'Not logged in'
+            ], 401);
+        }
+
+        $resource = DB::select('
+        select data, filename, filetype
+        from resource
+        where resource = ?',
+        [$request->resource])[0];
+
+        return response($resource->data)
+            ->header('Content-Type', $resource->filetype)
+            ->header('Content-Disposition', 'attachment; filename=' . $resource->filename);
     }
 }
 
