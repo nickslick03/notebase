@@ -11,3 +11,9 @@ function editInformation() {
         else input.style.display = 'none';
     });
 }
+
+function openDeleteForm() {
+    const deleteForm = document.getElementById('delete-form');
+    if(deleteForm.style.display === 'none') deleteForm.style.display = 'flex';
+    else deleteForm.style.display = 'none';
+}

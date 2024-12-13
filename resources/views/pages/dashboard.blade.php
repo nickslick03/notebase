@@ -13,7 +13,7 @@
                 <!-- Cards -->
                 <div style="display: flex; align-items: center;">
                     <div style="display: flex; overflow-x: scroll; width: 100%;">
-                        @isset($courses)
+                        @if(count($courses) !== 0)
                             @foreach ($courses as $course)
                                 <a href="/course/{{ $course->course }}">
                                     <div class="course-card">
@@ -30,8 +30,15 @@
                                 </a>
                             @endforeach
                         @else
-                                <!-- NO COURSES -->
-                        @endisset
+                            <div style="display: flex; flex-direction: column;">
+                                <div class="light-text" style="font-style: italic; margin:0 14px 6px 14px;">You are not enrolled in any courses yet. Click below to enroll!</div>
+                                <a href="/courselist">
+                                    <div class="empty-card">
+                                        <div style="font-size: 120px; color: #c4c4c4;">+</div>
+                                    </div>
+                                </a>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </section>
@@ -40,7 +47,7 @@
                 <!-- Starred Notes -->
                 <div style="overflow-x: auto;">
                     <div style="display: flex;">
-                        @isset($starred_resources)
+                        @if(count($starred_resources) !== 0)
                             @foreach ($starred_resources as $resource)
                                 <div class="note-preview" data-resource={{ $resource->resource }}  data-is_author="{{ $resource->is_author }}">
                                     <div class="note-information">
@@ -64,8 +71,12 @@
                                 </div>
                             @endforeach
                         @else
-                            <!-- NO STARRED RESOURCES -->
-                        @endisset
+                            <div style="display: flex; flex-direction: column;">
+                                <div class="light-text" style="font-style: italic; margin:0 14px 6px 14px;">
+                                    Begin starring resources by visiting the <a href="/courselist" style="color: var(--main-color)"><b>course page</b></a>. You do not need to be enrolled.
+                                </div>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </section>
