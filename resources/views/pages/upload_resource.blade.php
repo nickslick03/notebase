@@ -47,7 +47,7 @@
                 @enderror
             </div>
 
-            <div class="form-item" style="display: flex; justify-content: center;">
+            <div style="display: flex; justify-content: center; margin-top: 12px; margin-bottom: 12px;">
                 <input type="submit" style="background: var(--main-color); border: none; color: var(--text-color);">
             </div>
         </div>

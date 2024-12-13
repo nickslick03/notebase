@@ -31,6 +31,15 @@
                 <div>Old Password</div>
                 <input class="form-input" type="password">
             </div>
+            <div class="hidden" style="flex-direction: column;">
+                <div>The password must contain:</div>
+                <ul>
+                    <li>At least 8 characters</li>
+                    <li>At least 1 uppercase letter</li>
+                    <li>At least 1 lowercase letter</li>
+                    <li>At least 1 number</li>
+                </ul>
+            </div>
             <div class="form-item hidden">
                 <div>New Password</div>
                 <input class="form-input" type="password">

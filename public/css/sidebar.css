@@ -6,13 +6,16 @@
     background: white;
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--light-text-color);
+    background: #adadad !important;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--text-color);
+    background: var(--light-text-color) !important;
 }
 .form-item {
     margin: 12px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .form-input {
     margin: 6px 0;
@@ -22,7 +25,7 @@
     display: none;
 }
 #sidebar {
-    width: 235px;
+    width: 275px;
     height: 100vh;
     background: #f2f2f2;
     padding: 12px;

@@ -32,7 +32,9 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
-        <input type="submit" class="mb-4 btn btn-primary" style="background: var(--main-color); border: none; color: var(--text-color);">
+        <div  style="display: flex; justify-content: center;">
+            <input type="submit" class="btn btn-primary" style="margin-bottom: 4px; background: var(--main-color); border: none; color: var(--text-color);">
+        </div>
     </form>
     <div class="text-primary text-center">
         {{ $message }}

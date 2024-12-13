@@ -7,7 +7,7 @@ function editInformation() {
     const hiddenInputs = document.getElementsByClassName('hidden');
     const inputs = [].slice.call(hiddenInputs);
     inputs.forEach(input => {
-        if(input.style.display === 'none' || input.style.display.length === 0) input.style.display = 'block';
+        if(input.style.display === 'none' || input.style.display.length === 0) input.style.display = 'flex';
         else input.style.display = 'none';
     });
 }
