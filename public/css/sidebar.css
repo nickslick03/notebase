@@ -51,3 +51,9 @@
 a {
     text-decoration: none;
 }
+#delete-form {
+    margin: 16px 12px 0 12px;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #adadad;
+}

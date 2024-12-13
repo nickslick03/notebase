@@ -5,8 +5,16 @@
         <iron-icon icon="icons:create" style="margin-right: 6px; max-height: 20px; max-width: 20px;"></iron-icon>
         <div style="height: 100%;">Edit Account Information</div>
     </div>
+    <div style="display: flex; align-items: center; color: var(--light-text-color); font-size: 14px; cursor: pointer;" onclick="openDeleteForm()">
+        <iron-icon icon="icons:delete-forever" style="margin-right: 6px; max-height: 20px; max-width: 20px;"></iron-icon>
+        <div style="height: 100%;">Delete Account</div>
+    </div>
+    <form id="delete-form" style="display: none;">
+        <input type="submit" name="delete" value="Confirm Account Deletion" style="padding: auto; background: #ff351f; color: white; border: none;">
+        <div class="light-text" style="max-width: 200px; text-align: center; font-style: italic; line-height: 100%; font-size: 12px; margin: 6px;">Click Delete Account again to remove this popup</div>
+    </form>
     <form>
-        <div style="padding: 4px 12px;">
+        <div style="padding: 0 12px 4px 12px;">
             <div class="form-item">
                 <div>First</div>
                 <div class="light-text">Annika</div>
@@ -44,7 +52,7 @@
                 <div>New Password</div>
                 <input class="form-input" type="password">
             </div>
-            <input style="background: white; border: none; color: var(--text-color); margin-bottom: 20px;" class="form-input hidden" type="submit" value="Update">
+            <input style="background: var(--light-text-color); border: none; color: white; margin-bottom: 20px;" class="form-input hidden" type="submit" value="Update">
         </div>
     </form>
 </aside>
