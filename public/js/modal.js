@@ -28,6 +28,11 @@ $('.note-preview').on('click', async function () {
         const type = res.headers.get('Content-Type');
         const filename = res.headers.get('Content-Disposition').replace('attachment; filename=', '');
         $('#filename').text(filename);
+
+        const clone = res.clone();
+        $('#modal-download').attr('href', URL.createObjectURL(await clone.blob()));
+        $('#modal-download').attr('download', filename);
+
         const raw = await (type.includes('text') ? res.text() : res.blob());
         const [tag, attr] = type.includes('pdf')
         ? ['object', 'data']
