@@ -29,7 +29,7 @@
                                     <input type="hidden" name="is_starred" value="{{ $resource->is_starred }}">
                                     <button type="submit">
                                         <!--Stars-->
-                                        <div style="background: white; padding: 4px; width: fit-content; border-radius: 20px;">
+                                        <div class="star-container">
                                             <iron-icon icon="star-border" style="color: var(--main-color);"></iron-icon>
                                             <iron-icon icon="star" style="color: var(--main-color);"></iron-icon>
                                         </div>

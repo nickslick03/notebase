@@ -15,12 +15,18 @@
     padding-left: 14px;
 }
 /* My Courses Section */
+#card-container::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
 .course-card {
     background-color: #CCD884;
     margin: 6px 14px;
     text-align: center;
     border-radius: 25px;
     box-shadow: 0 0px 5px 4px #f0f0f0;
+    max-width: 225px;
 }
 .course-card * {
     color: black;
@@ -56,4 +62,12 @@
 }
 a {
     text-decoration: none;
+}
+.stop-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    display: block;
+    line-height: 1.2em;
+    max-height: 2.4em;
 }
