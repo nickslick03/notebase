@@ -18,6 +18,7 @@ Route::post('/login', [LogInController::class, 'authenticate']);
 Route::get('/logout', [LogInController::class, 'logout']);
 
 Route::post('/update_account', [RegisterController::class, 'update']);
+Route::post('/delete_account', [RegisterController::class, 'delete']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 

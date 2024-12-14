@@ -27,6 +27,7 @@
         <div style="height: 100%;">Delete Account</div>
     </div>
     <form id="delete-form" style="display: none;" action="delete_account", method="post">
+        @csrf
         <input type="submit" name="delete" value="Confirm Account Deletion"
         style="padding: auto; background: #ff351f; color: white; border: none;">
         <div 

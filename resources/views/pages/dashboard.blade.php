@@ -39,7 +39,7 @@
                                 <div class="light-text" style="font-style: italic; margin: 0 14px 6px 14px;">
                                     You are not enrolled in any courses yet. Click below to enroll!
                                 </div>
-                                <a href="/courselist">
+                                <a href="/course">
                                     <div class="empty-card">
                                         <div style="font-size: 120px; color: #c4c4c4;">+</div>
                                     </div>
@@ -85,7 +85,7 @@
                         <!-- If there are no starred resources, provide a prompt on where to find and star resources -->
                             <div style="display: flex; flex-direction: column;">
                                 <div class="light-text" style="font-style: italic; margin:0 14px 6px 14px;">
-                                    Begin starring resources by visiting the <a href="/courselist" style="color: var(--main-color)">
+                                    Begin starring resources by visiting the <a href="/course" style="color: var(--main-color)">
                                     <b>course page</b></a>. You do not need to be enrolled in any classes to star resources.
                                 </div>
                             </div>

@@ -14,6 +14,7 @@ class LogInController extends Controller
         $messages = [
             'new_account' => 'A new account has been created successfully.',
             'logout' => 'Logged out successfully.',
+            'deletion' => 'Account deleted successfully.',
             '' => ''
         ];
 

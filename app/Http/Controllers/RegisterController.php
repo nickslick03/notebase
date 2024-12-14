@@ -46,7 +46,14 @@ class RegisterController extends Controller
                     'role', 'No such role exists. Try again.'
                 );
             }
-            $create_user = DB::select('call create_user(:first_name, :last_name, :username, :email, :role, :password)', [
+        });
+
+        $validator->validate();
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        } else {
+            DB::select('call create_user(:first_name, :last_name, :username, :email, :role, :password)', [
                 'first_name' => $request->first_name,
                 'last_name' => $request->last_name,
                 'username' => $request->username,
@@ -54,14 +61,7 @@ class RegisterController extends Controller
                 'role' => $request->role,
                 'password' => Hash::make($request->password)
             ]);
-            if (count($create_user) == 0 || !$create_user) {
-                $val->errors()->add(
-                    'confirm_password', 'An error has occurred. please try again later.'
-                );
-            }
-        });
-
-        $validator->validate();
+        }
 
         return redirect('/login?message=new_account');
     }
@@ -136,5 +136,17 @@ class RegisterController extends Controller
         session()->put('user', $user);
 
         return redirect('/dashboard?show_sidebar=1');
+    }
+
+    public function delete(Request $request) {
+
+        if (!session()->has('user')) {
+            return redirect('login');
+        }
+
+        DB::delete('delete from user where user = ?', [session()->get('user')->user]);
+
+        session()->forget('user');
+        return redirect('login?message=deletion');
     }
 }
