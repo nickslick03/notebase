@@ -14,3 +14,37 @@
 a {
     text-decoration: none;
 }
+#content{
+    padding: 12px;
+}
+#header{
+    text-align: center;
+    margin: 12px;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+}
+#text{
+    color: var(--light-text-color);
+    font-weight: 500;
+}
+.flexy{
+    color: var(--light-text-color);
+    font-weight: 500;
+}
+#notesHeader{
+    opacity: .7;
+    text-align: center;
+}
+#sectionStyles{
+    display: flex;
+    flex-wrap: wrap;
+}
+#stylingStuff{
+    padding: 0 12px;
+    display: flex;
+    margin: auto;
+}
+
+
+
