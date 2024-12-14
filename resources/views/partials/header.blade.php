@@ -2,20 +2,24 @@
     <div>
         <div style="display: flex; align-items: center; margin: 0 6px;">
             <div id="logo" style="font-size: 28px;">
+                <!--If there is a user logged in-->
                 <a href="{{ session()->has('user') ? '/dashboard' : '/' }}">Notebase</a>
             </div>
             <div style="width: 100%;"></div>
             <div class="account-links">
                 <div style="display: flex; gap: 6px; align-items: center; margin-right: 6px;">
                     @if(session()->has('user'))
+                        <!--Logout Icon-->
                         <a href="/logout">Logout</a>
                         <iron-icon icon="icons:exit-to-app"></iron-icon>
                     @else
                        
+                        <!--Login Icon-->
                         <a href="/login" style="display: flex; flex-direction: row; align-items: center;">Login
                             <iron-icon icon="icons:account-box" style="margin: 0 12px 0 6px; max-height: 20px; max-width: 20px;"></iron-icon>
                         </a>
                        
+                        <!--Register Icon-->
                         <a href="/register" style="display: flex; flex-direction: row; align-items: center;">Register
                             <iron-icon icon="icons:add-box" style="margin: 0 6px; max-height: 20px; max-width: 20px;"></iron-icon>
                         </a>
@@ -33,18 +37,21 @@
                 </div>
                 <!--Dashboard-->
                 <div style="color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
-                    <a href="/dashboard" style = "display: flex; flex-direction: row; align-items: center;"><iron-icon icon="icons:date-range" style="margin-right: 6px; color: var(--main-color);"></iron-icon>
+                    <a href="/dashboard" style = "display: flex; flex-direction: row; align-items: center;">
+                    <iron-icon icon="icons:date-range" style="margin-right: 6px; color: var(--main-color);"></iron-icon>
                     <div style="color: var(--light-text-color)">Dashboard</div></a>
                 </div>
                 <!--Resource-->
                 <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; ">
-                    <a href="/upload_resource" style = "display: flex; flex-direction: row; align-items: center;"><iron-icon icon="icons:add" style="margin-right: 6px; color: var(--main-color);"></iron-icon>
+                    <a href="/upload_resource" style = "display: flex; flex-direction: row; align-items: center;">
+                    <iron-icon icon="icons:add" style="margin-right: 6px; color: var(--main-color);"></iron-icon>
                     <div style="color: var(--light-text-color);">Add Resource</div></a>
                 </div>
             @endif
             <!--Course-->
             <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; margin-left: 6px;">
-                <a href="/course" style = "display: flex; flex-direction: row; align-items: center;"><iron-icon icon="icons:chrome-reader-mode" style="margin-right: 6px; color: var(--main-color);"></iron-icon>
+                <a href="/course" style = "display: flex; flex-direction: row; align-items: center;">
+                <iron-icon icon="icons:chrome-reader-mode" style="margin-right: 6px; color: var(--main-color);"></iron-icon>
                 <div style="color: var(--light-text-color)">Courses</div></a>
             </div>
         </div>
