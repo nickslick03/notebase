@@ -17,6 +17,7 @@
                 <div style="display: flex; align-items: center;">
                     <div id="card-container" style="display: flex; overflow-x: scroll; width: 100%;">
                         @if(count($courses) !== 0)
+                        <!-- If there are enrolled courses, iterate through them and generate a card for each -->
                             @foreach ($courses as $course)
                                 <a href="/course/{{ $course->course }}">
                                     <div class="course-card">
@@ -33,6 +34,7 @@
                                 </a>
                             @endforeach
                         @else
+                        <!-- If there are no enrolled courses, display a prompt to enroll alongside an empty card -->
                             <div style="display: flex; flex-direction: column;">
                                 <div class="light-text" style="font-style: italic; margin: 0 14px 6px 14px;">
                                     You are not enrolled in any courses yet. Click below to enroll!
@@ -54,6 +56,7 @@
                 <div style="overflow-x: auto;">
                     <div style="display: flex;">
                         @if(count($starred_resources) !== 0)
+                        <!-- If there are starred resources, iterate through them and create a tag for each -->
                             @foreach ($starred_resources as $resource)
                                 <div class="note-preview" style="margin: 4px 14px;" data-resource={{ $resource->resource }}  data-is_author={{ $resource->is_author }}>
                                     <div class="note-information">
@@ -79,6 +82,7 @@
                                 </div>
                             @endforeach
                         @else
+                        <!-- If there are no starred resources, provide a prompt on where to find and star resources -->
                             <div style="display: flex; flex-direction: column;">
                                 <div class="light-text" style="font-style: italic; margin:0 14px 6px 14px;">
                                     Begin starring resources by visiting the <a href="/courselist" style="color: var(--main-color)">
