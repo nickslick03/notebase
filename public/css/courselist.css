@@ -1,66 +1,65 @@
+/* Tag Styling */
+table {
+    width: 100%;
+    max-width: 600px;
+}
+th {
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+td {
+    border-bottom: 1px solid lightgrey;
+}
+tr:last-child td {
+    border: none;
+}
+td {
+    padding: 10px 0;
+}
+button {
+    border: none;
+    background: none;
+}
+a.courseLinks{
+    text-decoration: underline;
+}
+
+/* Class Styling */
 .plus-icon {
     border-radius: 30px;
     max-height: 20px;
     max-width: 20px;
-}
-a.courseLinks{
-    text-decoration: underline;
 }
 .class-container {
     display: flex;
     align-items: center;
     padding: 4px 12px;
 }
-
 .table-container {
     display: flex;
     justify-content: center;
 }
-
-table {
-    width: 100%;
-    max-width: 600px;
-}
-
-th {
-    padding-bottom: 10px;
-    border-bottom: 1px solid black;
-}
-
-td {
-    border-bottom: 1px solid lightgrey;
-}
-
-tr:last-child td {
-    border: none;
-}
-
-td {
-    padding: 10px 0;
-}
-
 .course-td {
     padding-right: 4px;
     white-space: nowrap;
 }
-
-button {
+.bar {
+    background: white;
     border: none;
-    background: none;
-}
-a {
-    text-decoration: none;
+    border-radius: 20px;
+    padding: 0 4px;
+    width: 100%;
+    max-width: 300px;
 }
 
+/* Id Styling */
 #content{
     padding: 12px;
 }
-
 #title{
     text-align: center;
     margin-bottom: 12px;
 }
-
 #display{
     display: flex;
     justify-content: center;
@@ -72,25 +71,15 @@ a {
     background-color: var(--light-text-color);
     width: fit-content;
 }
-.bar {
-    background: white;
-    border: none;
-    border-radius: 20px;
-    padding: 0 4px;
-    width: 100%;
-    max-width: 300px;
-}
 #searchIcon {
     margin-right: 6px; color: white;
 }
-
 #classList{
     margin: 24px;
     background: #f5f5f5;
     padding: 12px;
     border-radius: 10px;
 }
-
 #classText{
     text-align: center;
     font-style: italic;

@@ -1,3 +1,4 @@
+/* Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
     height: 5px;
@@ -11,9 +12,14 @@
 ::-webkit-scrollbar-thumb:hover {
     background: var(--text-color);
 }
-a {
-    text-decoration: none;
+
+/* Class Styling */
+.flexy{
+    color: var(--light-text-color);
+    font-weight: 500;
 }
+
+/* Id Styling */
 #content{
     padding: 12px;
 }
@@ -25,10 +31,6 @@ a {
     flex-direction: column;
 }
 #text{
-    color: var(--light-text-color);
-    font-weight: 500;
-}
-.flexy{
     color: var(--light-text-color);
     font-weight: 500;
 }
@@ -45,6 +47,3 @@ a {
     display: flex;
     margin: auto;
 }
-
-
-

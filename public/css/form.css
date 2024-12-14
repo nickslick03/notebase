@@ -1,3 +1,4 @@
+/* Tag Styling */
 form, .center {
     border: 2px solid #d4d4d4;
     width: 400px;
@@ -5,14 +6,14 @@ form, .center {
     margin: auto auto 24px auto;
     border-radius: 20px;
 }
-
 input, select {
     max-width: 400px;
 }
-
 h1{
     text-align: center;
 }
+
+/* Class Styling */
 .form-item {
     margin: 24px auto;
 }
@@ -20,27 +21,23 @@ h1{
     display: flex;
     flex-direction: column;
 }
-
-
-#courseText {
-    font-style: italic;
-    text-align: center;
-}
-
 .flexy{
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
 .courseLink{
     color: var(--light-text-color);
 }
-
 .labelMargin{
     margin-bottom: 4px;
 }
 
+/* Id Styling */
+#courseText {
+    font-style: italic;
+    text-align: center;
+}
 #current-resource-display {
     border: 1px solid grey;
     max-height: 300px;
