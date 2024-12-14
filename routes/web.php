@@ -17,6 +17,8 @@ Route::get('/login', [LogInController::class, 'index']);
 Route::post('/login', [LogInController::class, 'authenticate']);
 Route::get('/logout', [LogInController::class, 'logout']);
 
+Route::post('/update_account', [RegisterController::class, 'update']);
+
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
 Route::get('/course', [CourseController::class, 'index']);

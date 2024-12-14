@@ -27,7 +27,9 @@
 </head>
 <body>
     @include('partials.header')
-    @include('partials.sidebar')
+    @if(session()->has('user'))
+        @include('partials.sidebar')
+    @endif
     @include('partials.modal')
     <div id="layout" class="px-4">
         @yield('body-content')

@@ -50,4 +50,3 @@
         </div>
     </div>
 </header>
-<script src="/js/sidebar.js"></script>

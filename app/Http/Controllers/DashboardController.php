@@ -31,7 +31,9 @@ class DashboardController extends Controller
 
         return view('pages.dashboard', [
             'courses' => $courses,
-            'starred_resources' => $starred_resources
+            'starred_resources' => $starred_resources,
+            'show_sidebar' => isset($request->show_sidebar),
+            'show_sidebar_edit' => isset($request->show_sidebar_edit)
         ]);
     }
 }

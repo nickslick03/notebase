@@ -17,3 +17,11 @@ function openDeleteForm() {
     if(deleteForm.style.display === 'none') deleteForm.style.display = 'flex';
     else deleteForm.style.display = 'none';
 }
+
+if (show_sidebar) {
+    expandSidebar();
+}
+if (show_sidebar_edit) {
+    expandSidebar();
+    editInformation();
+}

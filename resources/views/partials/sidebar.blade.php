@@ -1,3 +1,16 @@
+<?php 
+    $user = session()->get('user');
+?>
+@if($show_sidebar)
+<script>
+    const show_sidebar = true;
+</script>
+@endif
+@if($show_sidebar_edit)
+    <script>
+        const show_sidebar_edit = true;
+    </script>
+@endif
 <div id="click-off"></div>
 <aside id="sidebar">
     <h3 style="margin: 6px 0;">Account</h3>
@@ -13,31 +26,54 @@
         <input type="submit" name="delete" value="Confirm Account Deletion" style="padding: auto; background: #ff351f; color: white; border: none;">
         <div class="light-text" style="max-width: 200px; text-align: center; font-style: italic; line-height: 100%; font-size: 12px; margin: 6px;">Click Delete Account again to remove this popup</div>
     </form>
-    <form>
+    <form action="update_account" method="post">
+        @csrf
         <div style="padding: 0 12px 4px 12px;">
             <div class="form-item">
-                <div>First</div>
-                <div class="light-text">Annika</div>
-                <input class="form-input hidden" type="text">
+                <div>First Name</div>
+                <div class="light-text">{{ $user->first_name }}</div>
+                <input class="form-input hidden" type="text" name="first_name" required value="{{ old('first_name') ?? $user->first_name }}">    
+                @error('first_name', 'update')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-item">
-                <div>Last</div>
-                <div class="light-text">Pomeroy</div>
-                <input class="form-input hidden" type="text">
+                <div>Last Name</div>
+                <div class="light-text">{{ $user->first_name }}</div>
+                <input class="form-input hidden" type="text" name="last_name" value="{{ old('last_name') ?? $user->last_name }}">
+                @error('last_name', 'update')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-item">
                 <div>Username</div>
-                <div class="light-text">ColoringBunnies</div>
-                <input class="form-input hidden" type="text">
+                <div class="light-text">{{ $user->username }}</div>
+                <input class="form-input hidden" type="text" name="username" value="{{ old('username') ?? $user->username }}">
+                @error('username', 'update')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror 
             </div>
             <div class="form-item">
                 <div>Email</div>
-                <div class="light-text">ap1397@messiah.edu</div>
-                <input class="form-input hidden" type="email">
+                <div class="light-text">{{ $user->email }}</div>
+                <input class="form-input hidden" type="email" name="email" value="{{ old('email') ?? $user->email }}">
+                @error('email', 'update')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-item hidden">
                 <div>Old Password</div>
-                <input class="form-input" type="password">
+                <input class="form-input" type="password" name="password">
+                @error('password', 'update')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="form-item hidden">
+                <div>New Password</div>
+                <input class="form-input" type="password" name="new_password">
+                @error('new_password', 'update')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="hidden" style="flex-direction: column;">
                 <div>The password must contain:</div>
@@ -48,11 +84,8 @@
                     <li>At least 1 number</li>
                 </ul>
             </div>
-            <div class="form-item hidden">
-                <div>New Password</div>
-                <input class="form-input" type="password">
-            </div>
             <input style="background: var(--light-text-color); border: none; color: white; margin-bottom: 20px;" class="form-input hidden" type="submit" value="Update">
         </div>
     </form>
 </aside>
+<script src="/js/sidebar.js"></script>
