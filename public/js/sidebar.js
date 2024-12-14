@@ -18,10 +18,14 @@ function openDeleteForm() {
     else deleteForm.style.display = 'none';
 }
 
-if (show_sidebar) {
-    expandSidebar();
-}
-if (show_sidebar_edit) {
-    expandSidebar();
-    editInformation();
-}
+try {
+    if (show_sidebar) {
+        expandSidebar();
+    }
+} catch(e){}
+try {
+    if (show_sidebar_edit) {
+        expandSidebar();
+        editInformation();
+    }
+} catch(e){}
