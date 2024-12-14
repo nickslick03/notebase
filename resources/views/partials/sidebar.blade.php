@@ -50,7 +50,7 @@
             <!--Last Name-->
             <div class="form-item">
                 <div>Last Name</div>
-                <div class="light-text">{{ $user->first_name }}</div>
+                <div class="light-text">{{ $user->last_name }}</div>
                 <input class="form-input hidden" type="text" name="last_name" value="{{ old('last_name') ?? $user->last_name }}">
                 @error('last_name', 'update')
                     <div class="alert alert-danger">{{ $message }}</div>
