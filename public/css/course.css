@@ -41,9 +41,22 @@
 #sectionStyles{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 #stylingStuff{
     padding: 0 12px;
     display: flex;
     margin: auto;
+}
+#empty-note-warning {
+    width: 80%;
+    height: 400px;
+    background: #e8e8e8;
+    margin: auto;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
