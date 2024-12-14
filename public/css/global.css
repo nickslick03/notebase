@@ -54,13 +54,6 @@ footer {
     align-items: center;
 }
 
-:root {
-    --text-color: #2e2e2e;
-    --light-text-color: #757575;
-    --main-color: #ffc31f;
-    --background-color: white;
-}
-
 .auto-margin {
     margin: auto;
 }

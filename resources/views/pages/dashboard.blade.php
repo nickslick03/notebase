@@ -8,13 +8,16 @@
 @section('body-content')
     <div style="height: 100%; width: 100%;">
         <main style="padding: 0 12px 12px 12px;">
+            <!-- Main Title -->
             <h1 class="section-title my-4">Dashboard</h1>
+            <!-- Courses -->
             <section>
                 <h2 class="section-title">My Courses</h2>
                 <!-- Cards -->
                 <div style="display: flex; align-items: center;">
-                    <div style="display: flex; overflow-x: scroll; width: 100%;">
+                    <div id="card-container" style="display: flex; overflow-x: scroll; width: 100%;">
                         @if(count($courses) !== 0)
+                        <!-- If there are enrolled courses, iterate through them and generate a card for each -->
                             @foreach ($courses as $course)
                                 <a href="/course/{{ $course->course }}">
                                     <div class="course-card">
@@ -23,16 +26,19 @@
                                         </div>
                                         <div class="card-text">
                                             <div style="margin: auto;">
-                                                <b><div>{{ $course->title }}</div></b>
-                                                <div>{{ $course->subject_code . ' ' . $course->course_code . ' ' . $course->title }}</div>
+                                                <b><div class="stop-overflow">{{ $course->title }}</div></b>
+                                                <div class="stop-overflow">{{ $course->subject_code . ' ' . $course->course_code }}</div>
                                             </div>
                                         </div>
                                     </div>    
                                 </a>
                             @endforeach
                         @else
+                        <!-- If there are no enrolled courses, display a prompt to enroll alongside an empty card -->
                             <div style="display: flex; flex-direction: column;">
-                                <div class="light-text" style="font-style: italic; margin:0 14px 6px 14px;">You are not enrolled in any courses yet. Click below to enroll!</div>
+                                <div class="light-text" style="font-style: italic; margin: 0 14px 6px 14px;">
+                                    You are not enrolled in any courses yet. Click below to enroll!
+                                </div>
                                 <a href="/courselist">
                                     <div class="empty-card">
                                         <div style="font-size: 120px; color: #c4c4c4;">+</div>
@@ -43,12 +49,14 @@
                     </div>
                 </div>
             </section>
+            <!-- Starred Resources -->
             <section>
                 <h2 class="section-title mt-4">Starred Resources</h2>
                 <!-- Starred Notes -->
                 <div style="overflow-x: auto;">
                     <div style="display: flex;">
                         @if(count($starred_resources) !== 0)
+                        <!-- If there are starred resources, iterate through them and create a tag for each -->
                             @foreach ($starred_resources as $resource)
                                 <div class="note-preview" style="margin: 4px 14px;" data-resource={{ $resource->resource }}  data-is_author={{ $resource->is_author }}>
                                     <div class="note-information">
@@ -57,7 +65,7 @@
                                             <input type="hidden" name="resource" value="{{ $resource->resource }}">
                                             <input type="hidden" name="is_starred" value="1">
                                             <button type="submit">
-                                                <div style="background: white; padding: 4px; width: fit-content; border-radius: 20px;">
+                                                <div class="star-container">
                                                     <iron-icon icon="star-border" style="color: var(--main-color);"></iron-icon>
                                                     <iron-icon icon="star" style="color: var(--main-color);"></iron-icon>
                                                 </div>
@@ -68,15 +76,17 @@
                                         </div>
                                     </div>
                                     <div style="height: 3px; width: 25px; background: #d4d4d4;"></div>
-                                    <div style="box-shadow: 0 0px 4px 1px #c2c2c2; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 50px; min-width: 75px; min-height: 75px; max-width: 75px; max-height: 75px;">
+                                    <div class="imaging">
                                         <img class="note-img" src="/img/img.png">
                                     </div>
                                 </div>
                             @endforeach
                         @else
+                        <!-- If there are no starred resources, provide a prompt on where to find and star resources -->
                             <div style="display: flex; flex-direction: column;">
                                 <div class="light-text" style="font-style: italic; margin:0 14px 6px 14px;">
-                                    Begin starring resources by visiting the <a href="/courselist" style="color: var(--main-color)"><b>course page</b></a>. You do not need to be enrolled.
+                                    Begin starring resources by visiting the <a href="/courselist" style="color: var(--main-color)">
+                                    <b>course page</b></a>. You do not need to be enrolled in any classes to star resources.
                                 </div>
                             </div>
                         @endif

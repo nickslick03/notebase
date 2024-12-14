@@ -14,17 +14,24 @@
 <div id="click-off"></div>
 <aside id="sidebar">
     <h3 style="margin: 6px 0;">Account</h3>
-    <div style="display: flex; align-items: center; color: var(--light-text-color); font-size: 14px; cursor: pointer;" onclick="editInformation()">
+    <!--Edits Account Information-->
+    <div style="display: flex; align-items: center; color: var(--light-text-color); font-size: 14px; cursor: pointer;"
+    onclick="editInformation()">
         <iron-icon icon="icons:create" style="margin-right: 6px; max-height: 20px; max-width: 20px;"></iron-icon>
         <div style="height: 100%;">Edit Account Information</div>
     </div>
-    <div style="display: flex; align-items: center; color: var(--light-text-color); font-size: 14px; cursor: pointer;" onclick="openDeleteForm()">
+    <!--Deletes Account-->
+    <div style="display: flex; align-items: center; color: var(--light-text-color); font-size: 14px; cursor: pointer;"
+    onclick="openDeleteForm()">
         <iron-icon icon="icons:delete-forever" style="margin-right: 6px; max-height: 20px; max-width: 20px;"></iron-icon>
         <div style="height: 100%;">Delete Account</div>
     </div>
     <form id="delete-form" style="display: none;">
-        <input type="submit" name="delete" value="Confirm Account Deletion" style="padding: auto; background: #ff351f; color: white; border: none;">
-        <div class="light-text" style="max-width: 200px; text-align: center; font-style: italic; line-height: 100%; font-size: 12px; margin: 6px;">Click Delete Account again to remove this popup</div>
+        <input type="submit" name="delete" value="Confirm Account Deletion"
+        style="padding: auto; background: #ff351f; color: white; border: none;">
+        <div class="light-text"
+        style="max-width: 200px; text-align: center; font-style: italic; line-height: 100%; font-size: 12px; margin: 6px;">
+        Click Delete Account again to remove this popup</div>
     </form>
     <form action="update_account" method="post">
         @csrf
@@ -37,6 +44,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
+            <!--Last Name-->
             <div class="form-item">
                 <div>Last Name</div>
                 <div class="light-text">{{ $user->first_name }}</div>
@@ -45,6 +53,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
+            <!--Username-->
             <div class="form-item">
                 <div>Username</div>
                 <div class="light-text">{{ $user->username }}</div>
@@ -53,6 +62,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror 
             </div>
+            <!--Email-->
             <div class="form-item">
                 <div>Email</div>
                 <div class="light-text">{{ $user->email }}</div>
@@ -61,6 +71,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
+            <!--Old Password-->
             <div class="form-item hidden">
                 <div>Old Password</div>
                 <input class="form-input" type="password" name="password">
@@ -75,6 +86,7 @@
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
+            <!--New Password-->
             <div class="hidden" style="flex-direction: column;">
                 <div>The password must contain:</div>
                 <ul>
