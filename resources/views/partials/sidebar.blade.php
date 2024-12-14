@@ -1,12 +1,12 @@
 <?php 
     $user = session()->get('user');
 ?>
-@if($show_sidebar)
+@if(isset($show_sidebar) && $show_sidebar == 1)
 <script>
     const show_sidebar = true;
 </script>
 @endif
-@if($show_sidebar_edit)
+@if(isset($show_sidebar_edit) && $show_sidebar_edit == 1)
     <script>
         const show_sidebar_edit = true;
     </script>
@@ -26,12 +26,14 @@
         <iron-icon icon="icons:delete-forever" style="margin-right: 6px; max-height: 20px; max-width: 20px;"></iron-icon>
         <div style="height: 100%;">Delete Account</div>
     </div>
-    <form id="delete-form" style="display: none;">
+    <form id="delete-form" style="display: none;" action="delete_account", method="post">
         <input type="submit" name="delete" value="Confirm Account Deletion"
         style="padding: auto; background: #ff351f; color: white; border: none;">
-        <div class="light-text"
-        style="max-width: 200px; text-align: center; font-style: italic; line-height: 100%; font-size: 12px; margin: 6px;">
-        Click Delete Account again to remove this popup</div>
+        <div 
+            class="light-text"
+            style="max-width: 200px; text-align: center; font-style: italic; line-height: 100%; font-size: 12px; margin: 6px;">
+            Click Delete Account again to remove this popup
+        </div>
     </form>
     <form action="update_account" method="post">
         @csrf
