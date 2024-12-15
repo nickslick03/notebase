@@ -41,11 +41,17 @@
                     <iron-icon icon="icons:date-range" style="margin-right: 6px; color: var(--main-color);"></iron-icon>
                     <div style="color: var(--light-text-color)">Dashboard</div></a>
                 </div>
-                <!--Resource-->
+                <!--Add Resource-->
                 <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; ">
                     <a href="/upload_resource" style = "display: flex; flex-direction: row; align-items: center;">
                     <iron-icon icon="icons:add" style="margin-right: 6px; color: var(--main-color);"></iron-icon>
                     <div style="color: var(--light-text-color);">Add Resource</div></a>
+                </div>
+                <!--My Resources-->
+                <div style="display: flex; align-items: center; color: var(--main-color); padding: 2px 6px; ">
+                    <a href="/my_resources" style = "display: flex; flex-direction: row; align-items: center;">
+                    <iron-icon icon="icons:description" style="margin-right: 6px; color: var(--main-color);"></iron-icon>
+                    <div style="color: var(--light-text-color);">My Resources</div></a>
                 </div>
             @endif
             <!--Course-->

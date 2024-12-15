@@ -27,6 +27,8 @@ Route::post('/course/toggle', [CourseController::class, 'toggle']);
 Route::post('/course/toggle', [CourseController::class, 'toggle']);
 Route::get('/course/{course}', [CourseController::class, 'course']);
 
+Route::get('/my_resources', [Resource::class, 'my_resources']);
+
 Route::post('/resource/toggle_star', [Resource::class, 'toggle_star']);
 Route::post('/resource/get_data', [Resource::class, 'get_data']);
 Route::get('/resource/edit/{resource}', [Resource::class, 'get_edit']);

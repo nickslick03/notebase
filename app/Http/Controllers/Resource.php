@@ -85,6 +85,24 @@ class Resource extends Controller
         ]);
     }
 
+    public function my_resources(Request $request) {
+
+        if (!session()->has('user')) {
+            return redirect('login?callback_url=' . base64_encode('/my_resources'));
+        }
+
+        $resources = DB::select('
+        select r.resource, r.title, (sru.user) is not null as is_starred, (true) as is_author, substring_index(filetype, \'/\', 1) as img_name
+        from resource r
+        left join starred_resource_user sru
+            on r.resource = sru.resource and sru.user = ?', 
+        [session()->get('user')->user]);
+
+        return view('pages/my_resources', [
+            'resources' => $resources
+        ]);
+    }
+
     public function get_data(Request $request) {
 
         if (!session()->has('user')) {
