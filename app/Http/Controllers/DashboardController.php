@@ -15,13 +15,20 @@ class DashboardController extends Controller
         $user_id = session()->get('user')->user;
 
         $courses = DB::select('
-        select * from course_view cv
+        select 
+            *,
+            (ascii(substr(subject_code, 1, 1)) * 13 + ascii(substr(subject_code, 2, 1)) * 7 + ascii(substr(subject_code, 3, 1)) * 13) % 360 as hue
+        from course_view cv
         join associated_course_user acu
             on cv.course = acu.course and acu.user = ?',
         [$user_id]);
 
         $starred_resources = DB::select("
-        select r.resource, r.title, concat(subject_code, ' ', course_code) as code, (r.user_author = ?) as is_author, substring_index(filetype, '/', 1) as img_name
+        select 
+            r.resource, 
+            r.title, concat(subject_code, ' ', course_code) as code, 
+            (r.user_author = ?) as is_author, 
+            substring_index(filetype, '/', 1) as img_name
         from resource r
         join starred_resource_user sru
             on r.resource = sru.resource and user = ?

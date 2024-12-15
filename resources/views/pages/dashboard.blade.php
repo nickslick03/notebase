@@ -20,7 +20,7 @@
                         <!-- If there are enrolled courses, iterate through them and generate a card for each -->
                             @foreach ($courses as $course)
                                 <a href="/course/{{ $course->course }}">
-                                    <div class="course-card">
+                                    <div class="course-card" style="background-color: hsl({{$course->hue}}, 50%, 60%)">
                                         <div class="card-photo">
                                             <img class="card-img">
                                         </div>
