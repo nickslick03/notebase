@@ -7,12 +7,14 @@
 
 #quote {
     text-align: center;
-    font-size: 30px;
-    padding: 40px 0;
+    font-size: 25px;
+    padding: 0 40px;
+    border-left: gray 4px solid;
+    font-style: italic;
 }
 
 #button {
-    font-size: 35px;
+    font-size: 30px;
     cursor: pointer;
     color: white;
     background-color: var(--main-color);
@@ -27,13 +29,14 @@ a {
 #topSec{
     display: flex;
     flex-direction: row;
-    margin: 12px;
-    justify-content: center
+    margin: 40px 12px;
+    justify-content: center;
 }
 img {
     margin: 12px 12px 12px 0;
     border-radius: 20px;
-    max-width: 900px;
+    max-width: 350px;
+    height: auto;
 }
 
 #introText{
@@ -45,17 +48,28 @@ img {
 }
 
 #text{
-    width: 500px;
+    font-size: 20px;
+    font-weight: bold;
     margin: 0 auto 12px auto;
     padding: 0 12px 12px 12px;
     line-height: 150%;
     text-indent: 40px; 
-    text-align: justify;
-}
-#quoting{
-    background: #f2f2f2;
-    padding: 20px;
-    border-radius: 30px;
-    margin: 24px 12px 34px 12px
 }
 
+#quoting {
+    background: #f2f2f2;
+    padding: 20px;
+    margin: 40px 12px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+@media (max-width: 900px) {
+    #topSec {
+        flex-wrap: wrap;
+    }
+}
