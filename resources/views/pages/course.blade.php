@@ -42,7 +42,7 @@
                                 </div>
                                 <div class = "noteStuff"></div>
                                 <div class = "imaging">
-                                    <img class="note-img" src="/img/img.png">
+                                    <img class="note-img" src="/img/{{ $resource->img_name }}.png">
                                 </div>
                             </div>
                         @endforeach

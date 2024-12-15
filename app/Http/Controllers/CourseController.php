@@ -62,7 +62,7 @@ class CourseController extends Controller
         }
 
         $resources = DB::select('
-        select r.resource, r.title, (sru.user) is not null as is_starred, (r.user_author = ?) as is_author
+        select r.resource, r.title, (sru.user) is not null as is_starred, (r.user_author = ?) as is_author, substring_index(filetype, \'/\', 1) as img_name
         from resource r
         left join starred_resource_user sru
             on r.resource = sru.resource and sru.user = ?

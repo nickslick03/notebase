@@ -21,7 +21,7 @@ class DashboardController extends Controller
         [$user_id]);
 
         $starred_resources = DB::select("
-        select r.resource, r.title, concat(subject_code, ' ', course_code) as code, (r.user_author = ?) as is_author
+        select r.resource, r.title, concat(subject_code, ' ', course_code) as code, (r.user_author = ?) as is_author, substring_index(filetype, '/', 1) as img_name
         from resource r
         join starred_resource_user sru
             on r.resource = sru.resource and user = ?
