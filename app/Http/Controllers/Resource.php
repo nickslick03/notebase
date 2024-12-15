@@ -95,8 +95,9 @@ class Resource extends Controller
         select r.resource, r.title, (sru.user) is not null as is_starred, (true) as is_author, substring_index(filetype, \'/\', 1) as img_name
         from resource r
         left join starred_resource_user sru
-            on r.resource = sru.resource and sru.user = ?', 
-        [session()->get('user')->user]);
+            on r.resource = sru.resource and sru.user = ?
+        where user_author = ?', 
+        [session()->get('user')->user, session()->get('user')->user]);
 
         return view('pages/my_resources', [
             'resources' => $resources

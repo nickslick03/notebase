@@ -43,7 +43,7 @@
                         <!-- If there are no starred resources, provide a prompt on where to find and star resources -->
                             <div style="display: flex; flex-direction: column;">
                                 <div class="light-text" style="font-style: italic; margin:0 14px 6px 14px;">
-                                    Begin <a href="/upload_resources" style="color: var(--main-color)">
+                                    Begin <a href="/upload_resource" style="color: var(--main-color)">
                                     <b>uplaoding resources</b></a>. You need to be enrolled in the <a href="/course" style="color: var(--main-color)">course</a> want to upload resources to.
                                 </div>
                             </div>
