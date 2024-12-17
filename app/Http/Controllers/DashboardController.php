@@ -17,7 +17,7 @@ class DashboardController extends Controller
         $courses = DB::select('
         select 
             *,
-            (ascii(substr(subject_code, 1, 1)) * 13 + ascii(substr(subject_code, 2, 1)) * 7 + ascii(substr(subject_code, 3, 1)) * 13) % 360 as hue
+            (ascii(substr(subject_code, 1, 1)) * ascii(substr(subject_code, 2, 1)) * ascii(substr(subject_code, 3, 1))) % 360 as hue
         from course_view cv
         join associated_course_user acu
             on cv.course = acu.course and acu.user = ?',
