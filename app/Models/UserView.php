@@ -7,11 +7,10 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class User
+ * Class UserView
  * 
  * @property int $user
  * @property string $username
@@ -25,18 +24,17 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $role
  * @property string $first_name
  * @property string $last_name
- * 
- * @property Collection|Course[] $courses
- * @property Collection|Resource[] $resources
+ * @property string $role_name
  *
  * @package App\Models
  */
-class User extends Model
+class UserView extends Model
 {
-	protected $table = 'user';
-	protected $primaryKey = 'user';
+	protected $table = 'user_view';
+	public $incrementing = false;
 
 	protected $casts = [
+		'user' => 'int',
 		'email_verified_at' => 'datetime',
 		'access_code' => 'int',
 		'role' => 'int'
@@ -48,6 +46,7 @@ class User extends Model
 	];
 
 	protected $fillable = [
+		'user',
 		'username',
 		'email',
 		'email_verified_at',
@@ -56,23 +55,7 @@ class User extends Model
 		'access_code',
 		'role',
 		'first_name',
-		'last_name'
+		'last_name',
+		'role_name'
 	];
-
-	public function role()
-	{
-		return $this->belongsTo(Role::class, 'role');
-	}
-
-	public function courses()
-	{
-		return $this->belongsToMany(Course::class, 'associated_course_user', 'user', 'course')
-					->withPivot('associated_course_user');
-	}
-
-	public function resources()
-	{
-		return $this->belongsToMany(Resource::class, 'starred_resource_user', 'user', 'resource')
-					->withPivot('starred_resource_user');
-	}
 }

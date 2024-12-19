@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
+use App\Models\CourseView;
 
 
 class CourseController extends Controller
@@ -16,7 +17,8 @@ class CourseController extends Controller
             select *, exists(select * from associated_course_user asu
                             where cv.course = asu.course and asu.user = ?) as is_enrolled
             from course_view cv', [session()->get('user')->user])
-            : DB::select('select * from course_view');
+            : CourseView::take(10)->get();
+        
 
         return view('pages.courselist', [
             'courses' => $courses
