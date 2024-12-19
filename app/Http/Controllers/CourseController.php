@@ -17,7 +17,7 @@ class CourseController extends Controller
             select *, exists(select * from associated_course_user asu
                             where cv.course = asu.course and asu.user = ?) as is_enrolled
             from course_view cv', [session()->get('user')->user])
-            : CourseView::take(10)->get();
+            : CourseView::all();
         
 
         return view('pages.courselist', [
